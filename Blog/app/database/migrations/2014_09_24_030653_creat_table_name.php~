@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreatTableName extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		//
+		//
+		 Schema::create('posts', function(Blueprint $table) {
+
+      $table->increments('id');
+      $table->string('title');
+      $table->string('read_more');
+      $table->text('content');
+      $table->unsignedInteger('comment_count');
+      $table->timestamps();
+      $table->engine = 'MyISAM';</div>
+});
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		//
+	}
+
+}

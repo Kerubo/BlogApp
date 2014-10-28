@@ -1,0 +1,195 @@
+body {
+  margin      : 0 auto;
+  padding     : 0 0 50px 0;
+  font-family : "Helvetica", "Arial";
+  font-size   : 14px;
+  line-height : 18px;
+  cursor      : default;
+}
+#wrapper{
+        padding:10px;
+        background-color: #F05A28;
+        margin:60px auto;
+        width: 1080px;
+       min-height: 1700px;}
+
+
+/*The Header*/
+#header{ padding: 4px;
+        position: relative;
+        margin-left: 40px;
+        background-color:  #016DA0;
+        margin:10px;
+        width: 1040px;
+        height: 150px;
+        margin-left: 15px;
+     }
+
+
+#logo{width: 1000px;
+      height: 100px;
+     padding: 4px;
+     margin-left: 10px;
+     background-color:#F05A28;
+     margin-left: 18px;}
+     
+     
+#ogo{width: 650px;
+      height: 90px;
+     padding: 4px;
+     background-color: #016DA0 ;
+     float: left;}
+     
+ #log{width: 300px;
+      height: 90px;
+     padding: 4px;
+     background-color: #F05A28;
+     float: left;
+     
+    margin-right: 30px;}    
+   h1{Color: #F05A28;text-align: center;}
+   small{color: #016DA0 ;}
+     
+#head{width: 1000px;
+     padding: 4px;
+     margin:10px;
+     height: 20px;
+     margin-left: 18px;
+     background-color:#F05A28;}
+     
+     nav{width: 800px;
+         background-color: #016DA0 ;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;}
+
+nav ul{margin: 0;
+       padding: 0;}
+
+nav li{list-style: none;
+       font-size: 14px;
+       float: left;
+       text-align: center;
+       padding-left: 50px;}
+
+nav li a{display: inline;
+         margin-right: 25px;
+         text-decoration: none;
+         width: 9em;
+         padding: 8px;
+         font-style:Park Avenue;
+         color: #F05A28;
+         line-height: 1.50em;}
+
+nav li:hover > a{color: white;}
+
+
+nav li ul{display: none;
+          text-align: left;
+          margin: 0;
+          padding: 0 1em;
+          background: none;}
+
+nav li:hover ul, nav li.hover ul{display: block;
+                                 position: absolute;
+                                 padding: 0;}
+
+nav li:hover li, nav li.hover li{float: none;}
+
+nav li:hover li a, nav li.hover li a{width: 9em;
+                                     margin-top: 0;}
+
+nav li a:hover{background: none;
+               color:  #016DA0 ;}
+
+nav:after{visibility: hidden;
+          display: block;
+          font-size: 0px;
+          content: "";
+          clear: both;
+          height: 0px;}
+          
+    /*The Contact*/
+          #content{ padding: 4px;
+        position: relative;
+        margin-left: 40px;
+        background-color:: #F05A28;
+        margin:10px;
+        width: 1040px;
+        height: 1280px;
+        margin-left: 15px;
+     }
+#slider{width: 1000px;
+      height: 500px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #016DA0 ;
+     margin-left: 18px;}
+     
+     #container{width: 1000px;
+      height: 700px;
+     padding: 4px;
+     margin-left: 10px;
+     background-color: #F05A28;
+     margin-left: 18px;}
+     
+     
+     #slide{width: 310px;
+      height: 650px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #016DA0 ;
+      float:left;}
+     
+     #slid{width: 310px;
+      height: 650px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color:   #F05A28;
+   float:left;}
+    
+     #sli{width: 310px;
+      height: 650px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #016DA0 ;
+   float:left;}
+     /*the footer*/
+     #footer{ padding: 4px;
+        position: relative;
+        margin-left: 40px;
+        background-color:#CCC;
+        margin:10px;
+        width: 1040px;
+        height: 300px;
+        margin-left: 15px;
+     }
+     #li{width: 320px;
+      height: 250px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #2D52EA;
+   float:left;}
+
+#lid{width: 320px;
+      height: 250px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color:  #2D52EA;
+   float:left;}
+
+  #lide{width: 320px;
+
+      height: 250px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #2D52EA;
+   float:left;}
+

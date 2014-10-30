@@ -8,6 +8,11 @@
 
 </p>
 
+ <div class="pull-right btn-group">
+      <a href="{{route('posts.index')}}" class="btn btn-default">Entreprenuership</a>
+      <a href="{{route('posts.index')}}" class="btn btn-default">Robotics</a>
+      <a href="/logout" class="btn btn-primary">Logout</a>
+    </div>
 
 <p><a href="{{action('AuthController@logout')}}">Logout</a></p>
 <table style="border-top: 2px;border: 4px solid #000;">

@@ -1,4 +1,4 @@
-body {
+body {background-color: #CCC;
   margin      : 0 auto;
   padding     : 0 0 50px 0;
   font-family : "Helvetica", "Arial";
@@ -7,43 +7,43 @@ body {
   cursor      : default;
 }
 #wrapper{
-        padding:10px;
-        background-color: #F05A28;
-        margin:60px auto;
+        padding:5px;
+      background-color: #fff;
+        margin:20px auto;
         width: 1080px;
-       min-height: 1700px;}
+     ;}
 
 
 /*The Header*/
 #header{ padding: 4px;
         position: relative;
         margin-left: 40px;
-        background-color:  #016DA0;
+      
         margin:10px;
         width: 1040px;
         height: 150px;
-        margin-left: 15px;
+      ;
      }
 
 
 #logo{width: 1000px;
-      height: 100px;
+      
      padding: 4px;
      margin-left: 10px;
-     background-color:#F05A28;
+  
      margin-left: 18px;}
      
      
 #ogo{width: 650px;
-      height: 90px;
+     
      padding: 4px;
-     background-color: #016DA0 ;
+    
      float: left;}
      
  #log{width: 300px;
       height: 90px;
      padding: 4px;
-     background-color: #F05A28;
+    
      float: left;
      
     margin-right: 30px;}    
@@ -53,12 +53,12 @@ body {
 #head{width: 1000px;
      padding: 4px;
      margin:10px;
-     height: 20px;
+    
      margin-left: 18px;
-     background-color:#F05A28;}
+  }
      
-     nav{width: 800px;
-         background-color: #016DA0 ;
+     nav{width: 900px;
+        
     margin: 0 auto;
     position: relative;
     text-align: center;}
@@ -73,7 +73,7 @@ nav li{list-style: none;
        padding-left: 50px;}
 
 nav li a{display: inline;
-         margin-right: 25px;
+         margin-right: 20px;
          text-decoration: none;
          width: 9em;
          padding: 8px;
@@ -110,86 +110,83 @@ nav:after{visibility: hidden;
           height: 0px;}
           
     /*The Contact*/
-          #content{ padding: 4px;
+          #content{ padding: 2px;
         position: relative;
         margin-left: 40px;
-        background-color:: #F05A28;
+        
         margin:10px;
         width: 1040px;
-        height: 1280px;
+        
         margin-left: 15px;
      }
 #slider{width: 1000px;
-      height: 500px;
+    
      padding: 4px;
      margin:20px auto;
      margin-left: 10px;
-     background-color: #016DA0 ;
+  
      margin-left: 18px;}
      
      #container{width: 1000px;
-      height: 700px;
-     padding: 4px;
+      height: 700px;    padding: 4px;
      margin-left: 10px;
-     background-color: #F05A28;
+   
      margin-left: 18px;}
      
      
      #slide{width: 310px;
-      height: 650px;
+ 
      padding: 4px;
      margin:20px auto;
      margin-left: 10px;
-     background-color: #016DA0 ;
+   
       float:left;}
      
      #slid{width: 310px;
-      height: 650px;
+     
      padding: 4px;
      margin:20px auto;
      margin-left: 10px;
-     background-color:   #F05A28;
+   
    float:left;}
     
      #sli{width: 310px;
-      height: 650px;
-     padding: 4px;
+      height: 650px; padding: 4px;
      margin:20px auto;
      margin-left: 10px;
-     background-color: #016DA0 ;
+    
    float:left;}
      /*the footer*/
      #footer{ padding: 4px;
         position: relative;
         margin-left: 40px;
-        background-color:#CCC;
         margin:10px;
         width: 1040px;
-        height: 300px;
+       
         margin-left: 15px;
      }
      #li{width: 320px;
-      height: 250px;
+ 
      padding: 4px;
      margin:20px auto;
      margin-left: 10px;
-     background-color: #2D52EA;
+    
    float:left;}
 
 #lid{width: 320px;
-      height: 250px;
+   
      padding: 4px;
      margin:20px auto;
      margin-left: 10px;
-     background-color:  #2D52EA;
+    
    float:left;}
 
   #lide{width: 320px;
 
-      height: 250px;
+    
      padding: 4px;
      margin:20px auto;
      margin-left: 10px;
-     background-color: #2D52EA;
+   
    float:left;}
 

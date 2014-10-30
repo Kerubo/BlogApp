@@ -2,13 +2,12 @@
 @section('content')
 	<div id="content"><!-- start content -->
 <div id="slider">
-<a href="signup"><h1 style="background:#fff;color:#000;">USER LOGIN</h1></a>
 
+<img src="http://blog.wmiafrica.org/wp-content/uploads/2013/09/9662943066_4269a28a2b_z.jpg" width="1000px" height="800px">
 </div>
 <div id="container">
 <div id="slide">
-<br><br><br>
-<h1>Robotics<br><br><br>Enterprenuership</h1>
+<a href="signup"><h1 style="background:#fff;color:#000;">USER LOGIN</h1></a>
 </div>
 <div id="slid">
 <br><br><br>

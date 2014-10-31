@@ -1,0 +1,20 @@
+<! Doctype html>
+<html>
+<head>
+	<title>MY FIRST PROJECT</title>
+	<link href="assets/css/main.css" type="stylesheets"  rel="css/text">
+</head>
+<body>
+	<!--start wrapper-->
+	<!--stat header-->
+	<div id="header"></div>
+	<!--end header-->
+	<!--stat content-->
+	<div id="content"></div>
+	<!--end content->
+	<!--start footer-->
+	<div id="footer"></div>
+	<!--end footer-->
+	<!--end Wrapper-->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?php
+ 
+class UserTableSeeder extends Seeder {
+ 
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $vader = DB::table('users')->insert([
+                'username'   => 'lucy',
+                'email'      => 'lucykerubo763@gmail.com',
+                'password'   => Hash::make('kerubo'),
+                'first_name' => 'Lucy',
+                'last_name'  => 'Bosire',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime()
+            ]);
+ 
+        DB::table('users')->insert([
+                'username'   => 'Rahim',
+                'email'      => 'rahim@gmail.com',
+                'password'   => Hash::make('shabir'),
+                'first_name' => 'Rahim',
+                'last_name'  => 'Shabir',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime()
+            ]);
+ 
+        DB::table('users')->insert([
+                'username'   => 'Bramwell',
+                'email'      => 'bramwell@gmail.com',
+                'password'   => Hash::make('nzuki'),
+                'first_name' => 'Bramwell',
+                'last_name'  => 'Nzuki',
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime()
+            ]);
+    }
+ 
+}

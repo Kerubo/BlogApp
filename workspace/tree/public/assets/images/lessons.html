@@ -1,0 +1,3144 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7 lte9 lte8 lte7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script async="" src="lessons_files/www-widgetapi.js" id="www-widgetapi-script"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <title>
+
+ Computer Security | CS101 Courseware | Stanford Online
+</title>
+
+  <script src="lessons_files/analytics.js" async=""></script><script type="text/javascript">
+    /* immediately break out of an iframe if coming from the marketing website */
+    (function(window) {
+      if (window.location !== window.top.location) {
+        window.top.location = window.location;
+      }
+    })(this);
+  </script>
+
+  <script type="text/javascript" src="lessons_files/a"></script>
+
+  <link rel="icon" type="image/x-icon" href="https://class.stanford.edu/static/themes/stanford/images/favicon.6ddd1b867f66.ico">
+
+  
+    <link href="lessons_files/lms-style-vendor.css" rel="stylesheet" type="text/css">
+
+
+
+  
+    <link href="lessons_files/lms-style-app.css" rel="stylesheet" type="text/css">
+
+
+
+  
+    <link href="lessons_files/lms-style-app-extend1.css" rel="stylesheet" type="text/css">
+
+
+
+  
+    <link href="lessons_files/lms-style-app-extend2.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+    <script type="text/javascript" src="lessons_files/lms-main_vendor.js" charset="utf-8"></script><style type="text/css"> .vjs-youtube .vjs-poster { background-size: cover; }.iframeblocker { display:none;position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;z-index:2; }.vjs-youtube.vjs-user-inactive .iframeblocker { display:block; } .vjs-quality-button > div:first-child > span:first-child { position:relative;top:7px }</style>
+
+
+
+  
+
+  
+    <link href="lessons_files/lms-style-course-vendor.css" rel="stylesheet" type="text/css">
+
+
+
+  
+    <link href="lessons_files/lms-style-course.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="lessons_files/split.js"></script>
+<script type="text/javascript" src="lessons_files/jquery_004.js"></script>
+<script type="text/javascript" src="lessons_files/jquery.js"></script>
+<script type="text/javascript" src="lessons_files/Markdown.js"></script>
+<script type="text/javascript" src="lessons_files/Markdown_003.js"></script>
+<script type="text/javascript" src="lessons_files/Markdown_002.js"></script>
+<script type="text/javascript" src="lessons_files/jquery_005.js"></script>
+<script type="text/javascript" src="lessons_files/jquery_006.js"></script>
+<script type="text/javascript" src="lessons_files/jquery_007.js"></script>
+<script type="text/javascript" src="lessons_files/mustache.js"></script>
+<script type="text/javascript" src="lessons_files/URI.js"></script>
+<script type="text/javascript" src="lessons_files/underscore-min.js"></script>
+<script type="text/javascript" src="lessons_files/backbone-min.js"></script>
+<script type="text/javascript" src="lessons_files/tooltip_manager.js"></script>
+
+<link href="lessons_files/jquery.css" rel="stylesheet" type="text/css">
+
+
+  
+
+
+
+
+  
+  
+
+    
+
+<link rel="stylesheet" href="lessons_files/su-identity.css">
+<link href="lessons_files/css.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      alert("Warning: you are using an unsupported browser\nand may be unable to use some features.\n\nWe suggest you use either Mozilla Firefox or\nGoogle Chrome.");
+    });
+  </script>
+<![endif]-->
+<!--[if IE 8]>
+  <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie8.css" />
+<![endif]-->
+<!--[if IE 7]>
+  <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie7.css" />
+<![endif]-->
+
+
+  <!--[if lt IE 9]>
+    <script src="/static/js/html5shiv.d5e37d8ee1a4.js"></script>
+  <![endif]-->
+
+  
+
+  <meta name="path_prefix" content="">
+  <meta name="google-site-verification" content="_mipQ4AtZQDNmbtOkwehQDOgCxUUV2fb_C0b6wbiRHY">
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40837107-1', 'class.stanford.edu');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">DIV.MathJax_MathML {text-align: center; margin: .75em 0px}
+.MathJax_MathML {font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; border: 0; padding: 0; margin: 0}
+span.MathJax_MathML {display: inline}
+div.MathJax_MathML {display: block}
+.MathJax_mmlExBox {display: block; overflow: hidden; height: 1px; width: 60ex; padding: 0; border: 0; margin: 0}
+[mathvariant="double-struck"] {font-family: MathJax_AMS, MathJax_AMS-WEB}
+[mathvariant="script"] {font-family: MathJax_Script, MathJax_Script-WEB}
+[mathvariant="fraktur"] {font-family: MathJax_Fraktur, MathJax_Fraktur-WEB}
+[mathvariant="bold-script"] {font-family: MathJax_Script, MathJax_Caligraphic-WEB; font-weight: bold}
+[mathvariant="bold-fraktur"] {font-family: MathJax_Fraktur, MathJax_Fraktur-WEB; font-weight: bold}
+[mathvariant="monospace"] {font-family: monospace}
+[mathvariant="sans-serif"] {font-family: sans-serif}
+[mathvariant="bold-sans-serif"] {font-family: sans-serif; font-weight: bold}
+[mathvariant="sans-serif-italic"] {font-family: sans-serif; font-style: italic}
+[mathvariant="sans-serif-bold-italic"] {font-family: sans-serif; font-style: italic; font-weight: bold}
+[class="MJX-tex-oldstyle"] {font-family: MathJax_Caligraphic, MathJax_Caligraphic-WEB}
+[class="MJX-tex-oldstyle-bold"] {font-family: MathJax_Caligraphic, MathJax_Caligraphic-WEB; font-weight: bold}
+[class="MJX-tex-caligraphic"] {font-family: MathJax_Caligraphic, MathJax_Caligraphic-WEB}
+[class="MJX-tex-caligraphic-bold"] {font-family: MathJax_Caligraphic, MathJax_Caligraphic-WEB; font-weight: bold}
+@font-face /*1*/ {font-family: MathJax_AMS-WEB; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf')}
+@font-face /*2*/ {font-family: MathJax_Script-WEB; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Script-Regular.otf')}
+@font-face /*3*/ {font-family: MathJax_Fraktur-WEB; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Regular.otf')}
+@font-face /*4*/ {font-family: MathJax_Caligraphic-WEB; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf')}
+@font-face /*5*/ {font-family: MathJax_Fraktur-WEB; font-weight: bold; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Bold.otf')}
+@font-face /*6*/ {font-family: MathJax_Caligraphic-WEB; font-weight: bold; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Bold.otf')}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0 !important; padding: 0 !important; margin: 0 !important; vertical-align: 0 !important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap ! important}
+.MathJax img {display: inline ! important; float: none ! important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block; overflow: hidden; width: 1px; height: 60ex}
+.MathJax .MathJax_EmBox {display: block; overflow: hidden; width: 1px; height: 60em}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format('woff'), url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Main; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff') format('woff'), url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf') format('opentype'); font-weight: bold}
+@font-face {font-family: MathJax_Main; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff') format('woff'), url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Math; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff') format('woff'), url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff') format('woff'), url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff') format('woff'), url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff') format('woff'), url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff') format('woff'), url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff') format('woff'), url('https://edx-static.s3.amazonaws.com/mathjax-MathJax-727332c/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style class="firebugResetStyles" type="text/css" charset="utf-8">/* See license.txt for terms of usage */
+/** reset styling **/
+.firebugResetStyles {
+    z-index: 2147483646 !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: block !important;
+    border: 0 none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    outline: 0 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    position: fixed !important;
+    transform: rotate(0deg) !important;
+    transform-origin: 50% 50% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent none !important;
+    pointer-events: none !important;
+    white-space: normal !important;
+}
+style.firebugResetStyles {
+    display: none !important;
+}
+
+.firebugBlockBackgroundColor {
+    background-color: transparent !important;
+}
+
+.firebugResetStyles:before, .firebugResetStyles:after {
+    content: "" !important;
+}
+/**actual styling to be modified by firebug theme**/
+.firebugCanvas {
+    display: none !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBox {
+    width: auto !important;
+    position: static !important;
+}
+
+.firebugLayoutBoxOffset {
+    opacity: 0.8 !important;
+    position: fixed !important;
+}
+
+.firebugLayoutLine {
+    opacity: 0.4 !important;
+    background-color: #000000 !important;
+}
+
+.firebugLayoutLineLeft, .firebugLayoutLineRight {
+    width: 1px !important;
+    height: 100% !important;
+}
+
+.firebugLayoutLineTop, .firebugLayoutLineBottom {
+    width: 100% !important;
+    height: 1px !important;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px !important;
+    border-top: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px !important;
+    border-left: 1px solid #999999 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBoxParent {
+    border-top: 0 none !important;
+    border-right: 1px dashed #E00 !important;
+    border-bottom: 1px dashed #E00 !important;
+    border-left: 0 none !important;
+    position: fixed !important;
+    width: auto !important;
+}
+
+.firebugRuler{
+    position: absolute !important;
+}
+
+.firebugRulerH {
+    top: -15px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 14px !important;
+    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%13%88%00%00%00%0E%08%02%00%00%00L%25a%0A%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%04%F8IDATx%DA%EC%DD%D1n%E2%3A%00E%D1%80%F8%FF%EF%E2%AF2%95%D0D4%0E%C1%14%B0%8Fa-%E9%3E%CC%9C%87n%B9%81%A6W0%1C%A6i%9A%E7y%0As8%1CT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AATE9%FE%FCw%3E%9F%AF%2B%2F%BA%97%FDT%1D~K(%5C%9D%D5%EA%1B%5C%86%B5%A9%BDU%B5y%80%ED%AB*%03%FAV9%AB%E1%CEj%E7%82%EF%FB%18%BC%AEJ8%AB%FA'%D2%BEU9%D7U%ECc0%E1%A2r%5DynwVi%CFW%7F%BB%17%7Dy%EACU%CD%0E%F0%FA%3BX%FEbV%FEM%9B%2B%AD%BE%AA%E5%95v%AB%AA%E3E5%DCu%15rV9%07%B5%7F%B5w%FCm%BA%BE%AA%FBY%3D%14%F0%EE%C7%60%0EU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5JU%88%D3%F5%1F%AE%DF%3B%1B%F2%3E%DAUCNa%F92%D02%AC%7Dm%F9%3A%D4%F2%8B6%AE*%BF%5C%C2Ym~9g5%D0Y%95%17%7C%C8c%B0%7C%18%26%9CU%CD%13i%F7%AA%90%B3Z%7D%95%B4%C7%60%E6E%B5%BC%05%B4%FBY%95U%9E%DB%FD%1C%FC%E0%9F%83%7F%BE%17%7DkjMU%E3%03%AC%7CWj%DF%83%9An%BCG%AE%F1%95%96yQ%0Dq%5Dy%00%3Et%B5'%FC6%5DS%95pV%95%01%81%FF'%07%00%00%00%00%00%00%00%00%00%F8x%C7%F0%BE%9COp%5D%C9%7C%AD%E7%E6%EBV%FB%1E%E0(%07%E5%AC%C6%3A%ABi%9C%8F%C6%0E9%AB%C0'%D2%8E%9F%F99%D0E%B5%99%14%F5%0D%CD%7F%24%C6%DEH%B8%E9rV%DFs%DB%D0%F7%00k%FE%1D%84%84%83J%B8%E3%BA%FB%EF%20%84%1C%D7%AD%B0%8E%D7U%C8Y%05%1E%D4t%EF%AD%95Q%BF8w%BF%E9%0A%BF%EB%03%00%00%00%00%00%00%00%00%00%B8vJ%8E%BB%F5%B1u%8Cx%80%E1o%5E%CA9%AB%CB%CB%8E%03%DF%1D%B7T%25%9C%D5(%EFJM8%AB%CC'%D2%B2*%A4s%E7c6%FB%3E%FA%A2%1E%80~%0E%3E%DA%10x%5D%95Uig%15u%15%ED%7C%14%B6%87%A1%3B%FCo8%A8%D8o%D3%ADO%01%EDx%83%1A~%1B%9FpP%A3%DC%C6'%9C%95gK%00%00%00%00%00%00%00%00%00%20%D9%C9%11%D0%C0%40%AF%3F%EE%EE%92%94%D6%16X%B5%BCMH%15%2F%BF%D4%A7%C87%F1%8E%F2%81%AE%AAvzr%DA2%ABV%17%7C%E63%83%E7I%DC%C6%0Bs%1B%EF6%1E%00%00%00%00%00%00%00%00%00%80cr%9CW%FF%7F%C6%01%0E%F1%CE%A5%84%B3%CA%BC%E0%CB%AA%84%CE%F9%BF)%EC%13%08WU%AE%AB%B1%AE%2BO%EC%8E%CBYe%FE%8CN%ABr%5Dy%60~%CFA%0D%F4%AE%D4%BE%C75%CA%EDVB%EA(%B7%F1%09g%E5%D9%12%00%00%00%00%00%00%00%00%00H%F6%EB%13S%E7y%5E%5E%FB%98%F0%22%D1%B2'%A7%F0%92%B1%BC%24z3%AC%7Dm%60%D5%92%B4%7CEUO%5E%F0%AA*%3BU%B9%AE%3E%A0j%94%07%A0%C7%A0%AB%FD%B5%3F%A0%F7%03T%3Dy%D7%F7%D6%D4%C0%AAU%D2%E6%DFt%3F%A8%CC%AA%F2%86%B9%D7%F5%1F%18%E6%01%F8%CC%D5%9E%F0%F3z%88%AA%90%EF%20%00%00%00%00%00%00%00%00%00%C0%A6%D3%EA%CFi%AFb%2C%7BB%0A%2B%C3%1A%D7%06V%D5%07%A8r%5D%3D%D9%A6%CAu%F5%25%CF%A2%99%97zNX%60%95%AB%5DUZ%D5%FBR%03%AB%1C%D4k%9F%3F%BB%5C%FF%81a%AE%AB'%7F%F3%EA%FE%F3z%94%AA%D8%DF%5B%01%00%00%00%00%00%00%00%00%00%8E%FB%F3%F2%B1%1B%8DWU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*UiU%C7%BBe%E7%F3%B9%CB%AAJ%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5*%AAj%FD%C6%D4%5Eo%90%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5%86%AF%1B%9F%98%DA%EBm%BBV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%AD%D6%E4%F58%01%00%00%00%00%00%00%00%00%00%00%00%00%00%40%85%7F%02%0C%008%C2%D0H%16j%8FX%00%00%00%00IEND%AEB%60%82") repeat-x !important;
+    border-top: 1px solid #BBBBBB !important;
+    border-right: 1px dashed #BBBBBB !important;
+    border-bottom: 1px solid #000000 !important;
+}
+
+.firebugRulerV {
+    top: 0 !important;
+    left: -15px !important;
+    width: 14px !important;
+    height: 100% !important;
+    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%0E%00%00%13%88%08%02%00%00%00%0E%F5%CB%10%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%06~IDATx%DA%EC%DD%D1v%A20%14%40Qt%F1%FF%FF%E4%97%D9%07%3BT%19%92%DC%40(%90%EEy%9A5%CB%B6%E8%F6%9Ac%A4%CC0%84%FF%DC%9E%CF%E7%E3%F1%88%DE4%F8%5D%C7%9F%2F%BA%DD%5E%7FI%7D%F18%DDn%BA%C5%FB%DF%97%BFk%F2%10%FF%FD%B4%F2M%A7%FB%FD%FD%B3%22%07p%8F%3F%AE%E3%F4S%8A%8F%40%EEq%9D%BE8D%F0%0EY%A1Uq%B7%EA%1F%81%88V%E8X%3F%B4%CEy%B7h%D1%A2E%EBohU%FC%D9%AF2fO%8BBeD%BE%F7X%0C%97%A4%D6b7%2Ck%A5%12%E3%9B%60v%B7r%C7%1AI%8C%BD%2B%23r%00c0%B2v%9B%AD%CA%26%0C%1Ek%05A%FD%93%D0%2B%A1u%8B%16-%95q%5Ce%DCSO%8E%E4M%23%8B%F7%C2%FE%40%BB%BD%8C%FC%8A%B5V%EBu%40%F9%3B%A72%FA%AE%8C%D4%01%CC%B5%DA%13%9CB%AB%E2I%18%24%B0n%A9%0CZ*Ce%9C%A22%8E%D8NJ%1E%EB%FF%8F%AE%CAP%19*%C3%BAEKe%AC%D1%AAX%8C*%DEH%8F%C5W%A1e%AD%D4%B7%5C%5B%19%C5%DB%0D%EF%9F%19%1D%7B%5E%86%BD%0C%95%A12%AC%5B*%83%96%CAP%19%F62T%86%CAP%19*%83%96%CA%B8Xe%BC%FE)T%19%A1%17xg%7F%DA%CBP%19*%C3%BA%A52T%86%CAP%19%F62T%86%CA%B0n%A9%0CZ%1DV%C6%3D%F3%FCH%DE%B4%B8~%7F%5CZc%F1%D6%1F%AF%84%F9%0F6%E6%EBVt9%0E~%BEr%AF%23%B0%97%A12T%86%CAP%19%B4T%86%CA%B8Re%D8%CBP%19*%C3%BA%A52huX%19%AE%CA%E5%BC%0C%7B%19*CeX%B7h%A9%0C%95%E1%BC%0C%7B%19*CeX%B7T%06%AD%CB%5E%95%2B%BF.%8F%C5%97%D5%E4%7B%EE%82%D6%FB%CF-%9C%FD%B9%CF%3By%7B%19%F62T%86%CA%B0n%D1R%19*%A3%D3%CA%B0%97%A12T%86uKe%D0%EA%B02*%3F1%99%5DB%2B%A4%B5%F8%3A%7C%BA%2B%8Co%7D%5C%EDe%A8%0C%95a%DDR%19%B4T%C66%82fA%B2%ED%DA%9FC%FC%17GZ%06%C9%E1%B3%E5%2C%1A%9FoiB%EB%96%CA%A0%D5qe4%7B%7D%FD%85%F7%5B%ED_%E0s%07%F0k%951%ECr%0D%B5C%D7-g%D1%A8%0C%EB%96%CA%A0%A52T%C6)*%C3%5E%86%CAP%19%D6-%95A%EB*%95q%F8%BB%E3%F9%AB%F6%E21%ACZ%B7%22%B7%9B%3F%02%85%CB%A2%5B%B7%BA%5E%B7%9C%97%E1%BC%0C%EB%16-%95%A12z%AC%0C%BFc%A22T%86uKe%D0%EA%B02V%DD%AD%8A%2B%8CWhe%5E%AF%CF%F5%3B%26%CE%CBh%5C%19%CE%CB%B0%F3%A4%095%A1%CAP%19*Ce%A8%0C%3BO*Ce%A8%0C%95%A12%3A%AD%8C%0A%82%7B%F0v%1F%2FD%A9%5B%9F%EE%EA%26%AF%03%CA%DF9%7B%19*Ce%A8%0C%95%A12T%86%CA%B8Ze%D8%CBP%19*Ce%A8%0C%95%D1ae%EC%F7%89I%E1%B4%D7M%D7P%8BjU%5C%BB%3E%F2%20%D8%CBP%19*Ce%A8%0C%95%A12T%C6%D5*%C3%5E%86%CAP%19*Ce%B4O%07%7B%F0W%7Bw%1C%7C%1A%8C%B3%3B%D1%EE%AA%5C%D6-%EBV%83%80%5E%D0%CA%10%5CU%2BD%E07YU%86%CAP%19*%E3%9A%95%91%D9%A0%C8%AD%5B%EDv%9E%82%FFKOee%E4%8FUe%A8%0C%95%A12T%C6%1F%A9%8C%C8%3D%5B%A5%15%FD%14%22r%E7B%9F%17l%F8%BF%ED%EAf%2B%7F%CF%ECe%D8%CBP%19*Ce%A8%0C%95%E1%93~%7B%19%F62T%86%CAP%19*Ce%A8%0C%E7%13%DA%CBP%19*Ce%A8%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4%AE%A4%F5%25%C0%00%DE%BF%5C'%0F%DA%B8q%00%00%00%00IEND%AEB%60%82") repeat-y !important;
+    border-left: 1px solid #BBBBBB !important;
+    border-right: 1px solid #000000 !important;
+    border-bottom: 1px dashed #BBBBBB !important;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0 !important;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.fbProxyElement {
+    position: fixed !important;
+    pointer-events: auto !important;
+}
+</style></head>
+
+<body class="courseware  lang_en"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px none; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div style="display: none;" id="MathJax_Message"></div>
+  <a class="nav-skip" href="#seq_content">Skip to this view's content</a>
+
+  
+<!--[if IE]>
+<div class="sr message-accessibility message" id="mathjax-accessibility-message" aria-hidden="true">
+	<p class="copy">This page features MathJax technology to render mathematical formulae. To make math accessibile, we suggest using the MathPlayer plugin. Please visit the <a href="//www.dessci.com/en/products/mathplayer/download.htm">MathPlayer Download Page</a> to download the plugin for your browser.</p>
+</div>
+<div class="sr message-accessibility message" id="mathplayer-browser-message" aria-hidden="true">
+	<p class="copy">
+	 Your browser does not support the MathPlayer plugin. To use MathPlayer, please use Internet Explorer 6 through 9.
+	 </p>
+</div>
+<![endif]-->
+
+
+  
+
+
+
+
+
+
+
+  <div id="su-header">
+    <div class="su-container">
+      <a href="http://www.stanford.edu/">
+        <img src="lessons_files/brandbar-stanford-logo2x.png" alt="Stanford University" height="23" width="152">
+      </a>
+    </div>
+  </div>
+
+
+
+
+
+
+  <header class="global slim" aria-label="Global Navigation">
+    <nav>
+    <h1 class="logo">
+      <a href="https://class.stanford.edu/">
+        
+  <img src="lessons_files/stanford-S-logo.png" alt="Stanford Online, Courses List" height="35">
+
+      </a>
+    </h1>
+
+    <h2><span class="provider">Engineering:</span> CS101 Computer Science 101</h2>
+
+    <ol class="left nav-global authenticated">
+      
+  <li class="nav-global-01">
+    <a href="https://class.stanford.edu/about">About</a>
+  </li>
+  <li class="nav-global-02">
+    <a href="https://class.stanford.edu/courses">Find Courses</a>
+  </li>
+
+    </ol>
+    <ol class="user">
+      <li class="primary">
+        <a href="https://class.stanford.edu/dashboard" class="user-link">
+          <span class="avatar"></span>
+          <span class="sr">Dashboard for: </span> Kerubolucy
+        </a>
+      </li>
+      <li class="primary">
+        <a href="#" class="dropdown" aria-haspopup="true" aria-expanded="false"><span class="sr">More options dropdown</span> ▾</a>
+        <ul class="dropdown-menu" aria-label="More Options" role="menu">
+          
+          <li><a href="https://class.stanford.edu/logout" role="menuitem">Log Out</a></li>
+        </ul>
+      </li>
+    </ol>
+  </nav>
+</header>
+<!--[if lte IE 8]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="help-tab">
+
+  
+      <a href="#help-modal" rel="leanModal" role="button">Help</a>
+</div>
+
+<section id="help-modal" class="modal" aria-hidden="true" role="dialog" aria-label="Stanford Online Help">
+  <div class="inner-wrapper" id="help_wrapper">
+    <button class="close-modal " tabindex="0">
+      <i class="icon-remove"></i>
+      <span class="sr">
+        Close
+      </span>
+    </button>
+
+    <header>
+      <h2>
+	<span class="edx">Stanford Online</span> Help
+      </h2>
+      <hr>
+    </header>
+
+
+
+    <p>For <strong>questions on course lectures, homework, tools, or materials for this course</strong>, post in the course discussion forum.</p>
+	<ul class="help-buttons">
+	  <li><a class="help-modal-button" href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/discussion/forum">
+		Post in the Forum
+	  </a></li>
+	</ul>
+
+    <p>Have <strong>general questions about Stanford Online</strong>? You can find lots of helpful information in the Stanford Online Help Center.</p>
+	
+	<ul class="help-buttons">
+	  <li><a class="help-modal-button" href="https://stanfordonline.zendesk.com/hc" target="_blank">
+		Access the Help Center
+	  </a></li>
+	</ul>
+
+	<hr>
+    <p>Can't find an answer to your question? You can contact the Stanford Online general support team directly <a href="#" id="feedback_link_question">by clicking here</a>.</p>
+
+    <p class="note">Please note: The Stanford Online support team is 
+English speaking. While we will do our best to address your inquiry in 
+any language, our responses will be in English.</p>
+  </div>
+
+  <div class="inner-wrapper" id="feedback_form_wrapper">
+    <button class="close-modal">
+      <i class="icon-remove"></i>
+      <span class="sr">
+        Close
+      </span>
+    </button>
+
+    <header></header>
+
+    <form id="feedback_form" class="feedback_form" method="post" data-remote="true" action="/submit_feedback">
+      <div id="feedback_error" class="modal-form-error" tabindex="-1"></div>
+      <label data-field="subject" for="feedback_form_subject">Briefly describe your issue*</label>
+      <input name="subject" id="feedback_form_subject" aria-required="true" type="text">
+      <label data-field="details" for="feedback_form_details">Tell us the details*
+<span class="tip">Include error messages, steps which lead to the issue, etc</span></label>
+      <textarea name="details" id="feedback_form_details" aria-required="true"></textarea>
+      <input name="issue_type" type="hidden">
+      <input name="course_id" value="Engineering/CS101/Summer2014" type="hidden">
+      <div class="submit">
+        <input name="submit" value="Submit" id="feedback_submit" type="submit">
+      </div>
+    </form>
+  </div>
+
+  <div class="inner-wrapper" id="feedback_success_wrapper" tabindex="0">
+    <button class="close-modal" tabindex="0">
+      <i class="icon-remove"></i>
+      <span class="sr">
+        Close
+      </span>
+    </button>
+
+    <header>
+      <h2>Thank You!</h2>
+      <hr>
+    </header>
+
+    
+    <p>
+    Thank you for your inquiry or feedback. We typically respond to a 
+request within three business days. In the meantime, please review our <a href="https://stanfordonline.zendesk.com/hc/en-us" target="_blank" id="feedback-faq-link" tabindex="0">Help Center articles</a>, where answers to many common questions have been posted.
+    </p>
+  </div>
+</section>
+
+<script type="text/javascript">
+(function() {
+    var onModalClose = function() {
+            $(".help-modal .close-modal").off("click");
+            $("#lean_overlay").off("click");
+            $("#help-modal").attr("aria-hidden", "true");
+            $('area,input,select,textarea,button').removeAttr('tabindex');
+            $(".help-tab a").focus();
+        },
+        cycle_modal_tab = function(from_element_name, to_element_name) {
+            $(from_element_name).on('keydown', function(e) {
+                var keyCode = e.keyCode || e.which;
+                if (keyCode === 9) {
+                    e.preventDefault();
+                    $(to_element_name).focus();
+                }
+            });
+        };
+
+    $(".help-tab").click(function() {
+        $(".field-error").removeClass("field-error");
+        $("#feedback_form")[0].reset();
+        $("#feedback_form input[type='submit']").removeAttr("disabled");
+        $("#feedback_form_wrapper").css("display", "none");
+        $("#feedback_error").css("display", "none");
+        $("#feedback_success_wrapper").css("display", "none");
+        $("#help_wrapper").css("display", "block");
+        $("#help-modal").attr("aria-hidden", "false");
+        $("#help-modal .close-modal").click(onModalClose);
+        $("#lean_overlay").click(onModalClose);
+        $("#help_wrapper .close-modal").focus();
+    });
+    showFeedback = function(event, issue_type, title, subject_label, details_label) {
+        $("#help_wrapper").css("display", "none");
+        $("#feedback_form input[name='issue_type']").val(issue_type);
+        $("#feedback_form_wrapper").css("display", "block");
+        $("#feedback_form_wrapper header").html("<h2>" + title + "</h2><hr>");
+        $("#feedback_form_wrapper label[data-field='subject']").html(subject_label);
+        $("#feedback_form_wrapper label[data-field='details']").html(details_label);
+        $("#feedback_form_wrapper .close-modal").focus();
+        event.preventDefault();
+    };
+    cycle_modal_tab("#feedback_link_question", "#help_wrapper .close-modal");
+    cycle_modal_tab("#feedback_submit", "#feedback_form_wrapper .close-modal");
+    cycle_modal_tab("#feedback-faq-link", "#feedback_success_wrapper .close-modal");
+    $("#help-modal").on("keydown", function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 27) {
+            e.preventDefault();
+            $("#help_wrapper .close-modal").click();
+        }
+    });
+    $("#feedback_link_problem").click(function(event) {
+        showFeedback(
+            event,
+            "problem",
+            "Report a Problem",
+            "Brief description of the problem" + "*",
+            "Details of the problem you are encountering" + "*" + "<span class='tip'>" +
+              "Include error messages, steps which lead to the issue, etc." + "</span>"
+        );
+    });
+    $("#feedback_link_suggestion").click(function(event) {
+        showFeedback(
+            event,
+            "suggestion",
+            "Make a Suggestion",
+            "Brief description of your suggestion" + "*",
+            "Details" + "*"
+        );
+    });
+    $("#feedback_link_question").click(function(event) {
+        showFeedback(
+            event,
+            "question",
+            "Ask a Question",
+            "Brief summary of your question" + "*",
+            "Details" + "*"
+        );
+    });
+    $("#feedback_form").submit(function() {
+        $("input[type='submit']", this).attr("disabled", "disabled");
+        $('area,input,select,textarea,button').attr('tabindex', -1);
+        $("#feedback_form_wrapper .close-modal").focus();
+    });
+    $("#feedback_form").on("ajax:complete", function() {
+        $("input[type='submit']", this).removeAttr("disabled");
+    });
+    $("#feedback_form").on("ajax:success", function(event, data, status, xhr) {
+        $("#feedback_form_wrapper").css("display", "none");
+        $("#feedback_success_wrapper").css("display", "block");
+        $("#feedback_success_wrapper").focus();
+    });
+    $("#feedback_form").on("ajax:error", function(event, xhr, status, error) {
+        $(".field-error").removeClass("field-error").removeAttr("aria-invalid");
+        var responseData;
+        try {
+            responseData = jQuery.parseJSON(xhr.responseText);
+        } catch(err) {
+        }
+        if (responseData) {
+            $("[data-field='"+responseData.field+"']").addClass("field-error").attr("aria-invalid", "true");
+            $("#feedback_error").html(responseData.error).stop().css("display", "block");
+        } else {
+            // If no data (or malformed data) is returned, a server error occurred
+            htmlStr = "An error has occurred.";
+            // If no email is configured, we can't do much other than
+            // ask the user to try again later
+            htmlStr += "Please try again later.";
+            $("#feedback_error").html(htmlStr).stop().css("display", "block");
+        }
+        // Make change explicit to assistive technology
+        $("#feedback_error").focus();
+    });
+})(this)
+</script>
+
+
+
+
+  <div class="content-wrapper" id="content">
+    
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <i class="icon-fullscreen icon-large"></i> <%= gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+  
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%= gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+      
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <i class="icon-remove icon-large"></i> <%= gettext("Close") %>
+        </span>
+      </a>
+      
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <i class="icon-zoom-in icon-large"></i> <%= gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+    
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" role="button">
+            <span class="label">
+              <i class="icon-zoom-out icon-large"></i> <%= gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="courseware course-material">
+  <div class="inner-wrapper">
+    <ol class="course-tabs">
+        
+          <li>
+             <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware" class="active">
+                 Courseware
+                   <span class="sr">, current location</span>
+             </a>
+          </li>
+        
+          <li>
+             <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/info" class="">
+                 Course Info
+             </a>
+          </li>
+        
+          <li>
+             <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/discussion/forum" class="">
+                 Discussion
+             </a>
+          </li>
+        
+          <li>
+             <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/course_wiki" class="">
+                 Wiki
+             </a>
+          </li>
+        
+          <li>
+             <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/progress" class="">
+                 Progress
+             </a>
+          </li>
+    
+    </ol>
+  </div>
+</nav>
+
+
+
+<div class="container">
+  <div class="course-wrapper">
+
+    <div class="course-index" role="navigation">
+      <header id="open_close_accordion">
+        <a href="#">close</a>
+      </header>
+
+      <div role="tablist" class="ui-accordion ui-widget ui-helper-reset" id="accordion" style="">
+        <nav aria-label="Course Navigation">
+            
+
+
+
+    
+  <div class="chapter">
+      
+      <h3 tabindex="-1" aria-selected="false" aria-controls="ui-accordion-accordion-panel-0" id="ui-accordion-accordion-header-0" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" aria-label="Week 1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+        <a href="#">Week&nbsp;1</a>
+      </h3>
+
+    <ul aria-hidden="true" aria-expanded="false" role="tabpanel" aria-labelledby="ui-accordion-accordion-header-0" id="ui-accordion-accordion-panel-0" style="display: none;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z1/">
+              <p>Stanford CS101 Introduction </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z13/">
+              <p>Code Writing </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z21/">
+              <p>Code Writing Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z23/">
+              <p>Code Variables </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z29/">
+              <p>Code Variables Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z31/">
+              <p>Digital Images </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z38/">
+              <p>Digital Image Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z41/">
+              <p>Image Code </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z54/z51/">
+              <p>Image Code Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+    </ul>
+  </div>
+
+    
+  <div class="chapter">
+      
+      <h3 tabindex="-1" aria-selected="false" aria-controls="ui-accordion-accordion-panel-1" id="ui-accordion-accordion-header-1" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" aria-label="Week 2"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+        <a href="#">Week&nbsp;2</a>
+      </h3>
+
+    <ul aria-hidden="true" aria-expanded="false" role="tabpanel" aria-labelledby="ui-accordion-accordion-header-1" id="ui-accordion-accordion-panel-1" style="display: none;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/a7a70ce6e4724c58862ee6007284face/">
+              <p>Week 2 Course Survey </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/z55/">
+              <p>Image For-Loop </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/z63/">
+              <p>Image For-Loop Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/z66/">
+              <p>Image Expressions </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/z76/">
+              <p>Image Expressions Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/z79/">
+              <p>Image Puzzles </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/z87/">
+              <p>Image Puzzle Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/z90/">
+              <p>Grayscale Images </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z100/z98/">
+              <p>Grayscale Image Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+    </ul>
+  </div>
+
+    
+  <div class="chapter">
+      
+      <h3 tabindex="-1" aria-selected="false" aria-controls="ui-accordion-accordion-panel-2" id="ui-accordion-accordion-header-2" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" aria-label="Week 3"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+        <a href="#">Week&nbsp;3</a>
+      </h3>
+
+    <ul aria-hidden="true" aria-expanded="false" role="tabpanel" aria-labelledby="ui-accordion-accordion-header-2" id="ui-accordion-accordion-panel-2" style="display: none;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z101/">
+              <p>Image Logic </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z111/">
+              <p>Image Logic Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z113/">
+              <p>Image Bluescreen </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z123/">
+              <p>Image Bluescreen Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z125/">
+              <p>Computer Hardware </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/7ee3c0a64cec455cadcfffb1cf5d8cd9/">
+              <p>Computer Hardware Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/cd7dc1cce8774460a7a0e8d01e4f292e/">
+              <p>Optional Video: Moore's Law Flashlight (2:35) </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/87c7b7218e0a4b48951b136171318b19/">
+              <p>Optional Video: How a Hard Drive Works (6:00) </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z129/">
+              <p>Bits and Bytes </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z134/">
+              <p>Bits and Bytes Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z136/">
+              <p>Kilobytes Megabytes Gigabytes </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/z141/">
+              <p>Kilobytes Megabytes Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z143/36e163dae6694e7baff9c3ee4197b529/">
+              <p>Make Your Own Bluescreen (optional) </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+    </ul>
+  </div>
+
+    
+  <div class="chapter">
+      
+      <h3 tabindex="-1" aria-selected="false" aria-controls="ui-accordion-accordion-panel-3" id="ui-accordion-accordion-header-3" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" aria-label="Week 4"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+        <a href="#">Week&nbsp;4</a>
+      </h3>
+
+    <ul aria-hidden="true" aria-expanded="false" role="tabpanel" aria-labelledby="ui-accordion-accordion-header-3" id="ui-accordion-accordion-panel-3" style="display: none;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z144/">
+              <p>Software </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z149/">
+              <p>Software 1 Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z151/">
+              <p>Computer Languages </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z156/">
+              <p>Software 2 Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z158/">
+              <p>Computer Networking </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z163/">
+              <p>Computer Network Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z165/">
+              <p>The Internet - TCP/IP </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z170/">
+              <p>Network 2 Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z172/">
+              <p>Table Data </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z187/z184/">
+              <p>Table Data Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+    </ul>
+  </div>
+
+    
+  <div class="chapter">
+      
+      <h3 tabindex="-1" aria-selected="false" aria-controls="ui-accordion-accordion-panel-4" id="ui-accordion-accordion-header-4" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" aria-label="Week 5"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+        <a href="#">Week&nbsp;5</a>
+      </h3>
+
+    <ul aria-hidden="true" aria-expanded="false" role="tabpanel" aria-labelledby="ui-accordion-accordion-header-4" id="ui-accordion-accordion-panel-4" style="display: none;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z188/">
+              <p>Table startsWith endsWith </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/fc6983255aef4391aa6944390ceba575/">
+              <p>Table startsWith endsWith Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z192/">
+              <p>Table Boolean Logic </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/25cada112f85416587fba809693742ed/">
+              <p>Table Boolean Logic Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z196/">
+              <p>Table Counting </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/2889febbe2d84e23ad065d4394f4b86e/">
+              <p>Table Counting Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z200/">
+              <p>Table Counting Multiple </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/332115705d744b388453c6a75c715bc5/">
+              <p>Table Counting Multiple Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/z204/">
+              <p>Analog and Digital </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z208/e013cff1abba40c7928648f1d85c3dfc/">
+              <p>Analog and Digital Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+    </ul>
+  </div>
+
+    
+  <div class="chapter is-open">
+      
+      <h3 tabindex="0" aria-selected="true" aria-controls="ui-accordion-accordion-panel-5" id="ui-accordion-accordion-header-5" role="tab" class="active ui-accordion-header ui-helper-reset ui-state-default ui-accordion-header-active ui-state-active ui-corner-top ui-accordion-icons" aria-label="Week 6, current chapter"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>
+        <a href="#">Week&nbsp;6</a>
+      </h3>
+
+    <ul aria-hidden="false" aria-expanded="true" role="tabpanel" aria-labelledby="ui-accordion-accordion-header-5" id="ui-accordion-accordion-panel-5" style="" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z213/">
+              <p>Analog and Digital 2 </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/8ceb256ea81b4023bd0934787c7713f3/">
+              <p>Analog and Digital 2 Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z217/">
+              <p>Digital Media </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/a7fc45aeeb884cbbb722903c87cfc158/">
+              <p>Digital Media Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/aa2b16bfd6f94386b4880083a31fb32b/">
+              <p>Spreadsheets </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/c72e96a4fe81488887accd4934c13d02/">
+              <p>Spreadsheets Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class="active ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z221/">
+              <p>Computer Security <span class="sr">, current section</span></p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/0750a7cc28864829920f77eb2df5d539/">
+              <p>Computer Security Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/8a4cc7b2a7254d61839e2f6ed8631599/">
+              <p>Computer Security 2 </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/ce598bbe074b4be88849eca6de66a85d/">
+              <p>Computer Security 2 Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/43bac971bbf5497fb6b304eea40d23a3/">
+              <p>Computer Security 3 </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" graded">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/63a549fd5cde4f4d89272c8a0342adee/">
+              <p>Computer Security 3 Exercises </p>
+              
+              <p class="subtitle">Exercises</p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/z229/z225/">
+              <p>Conclusions </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+    </ul>
+  </div>
+
+    
+  <div class="chapter">
+      
+      <h3 tabindex="-1" aria-selected="false" aria-controls="ui-accordion-accordion-panel-6" id="ui-accordion-accordion-header-6" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" aria-label="Finishing Up"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+        <a href="#">Finishing&nbsp;Up</a>
+      </h3>
+
+    <ul aria-hidden="true" aria-expanded="false" role="tabpanel" aria-labelledby="ui-accordion-accordion-header-6" id="ui-accordion-accordion-panel-6" style="display: none;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/37184b1806934748bea0d5be46ee3216/75c471412c94481997f9a6be19f9a483/">
+              <p>Post-Course Survey </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/37184b1806934748bea0d5be46ee3216/362f118c23a04698b8496353dfca6a00/">
+              <p>Generate your Statement of Accomplishment </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+    </ul>
+  </div>
+
+    
+  <div class="chapter">
+      
+      <h3 tabindex="-1" aria-selected="false" aria-controls="ui-accordion-accordion-panel-7" id="ui-accordion-accordion-header-7" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all ui-accordion-icons" aria-label="Course Resources"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+        <a href="#">Course&nbsp;Resources</a>
+      </h3>
+
+    <ul aria-hidden="true" aria-expanded="false" role="tabpanel" aria-labelledby="ui-accordion-accordion-header-7" id="ui-accordion-accordion-panel-7" style="display: none;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/d1714dd9a6f84dd683be1eb737b6dbfe/80370d8713f74890ab042d48d80df3ed/">
+              <p>Pre-Course Activity </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/d1714dd9a6f84dd683be1eb737b6dbfe/d47eb90418a64f3b8c7a8e0467f0db45/">
+              <p>Course Syllabus and How-To </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/d1714dd9a6f84dd683be1eb737b6dbfe/2188c8cbabb34488be854c63fd80a782/">
+              <p>CS101 Browser Checker </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/d1714dd9a6f84dd683be1eb737b6dbfe/b90374914f014763962c3b0ed76554a2/">
+              <p>RGB Explorer </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+          <li class=" ">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/courseware/d1714dd9a6f84dd683be1eb737b6dbfe/7a96ffaf52994869a08660eaac191c0c/">
+              <p>Image Functions Reference </p>
+              
+              <p class="subtitle"></p>
+            </a>
+          </li>
+    </ul>
+  </div>
+
+
+        </nav>
+      </div>
+    </div>
+
+    <section class="course-content" id="course-content">
+      <div class="xblock xblock-student_view xmodule_display xmodule_SequenceModule xblock-initialized" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="153fd8d06fc011e48dd3068753ad5b8a" data-runtime-version="1" data-usage-id="i4x:;_;_Engineering;_CS101;_sequential;_z221" data-type="Sequence" data-course-id="Engineering/CS101/Summer2014">
+    
+
+<div id="sequence_i4x-Engineering-CS101-sequential-z221" class="sequence" data-id="i4x://Engineering/CS101/sequential/z221" data-position="1" data-ajax-url="/courses/Engineering/CS101/Summer2014/xblock/i4x:;_;_Engineering;_CS101;_sequential;_z221/handler/xmodule_handler">
+  <nav class="sequence-nav">
+    <ul class="sequence-nav-buttons">
+      <li class="prev"><a aria-hidden="true" class="disabled" role="button" href="#">Previous</a></li>
+    </ul>
+
+    <div class="sequence-list-wrapper">
+      <ol style="left: 0px;" role="tablist" aria-label="Section Navigation" id="sequence-list">
+        <li>
+        <a aria-selected="true" class="seq_video progress-0 active" data-id="i4x://Engineering/CS101/vertical/z224" data-element="1" href="javascript:void(0);" title="
+Text" data-page-title="" aria-controls="seq_contents_0" id="tab_0" tabindex="0" role="tab">
+            <p aria-hidden="false">
+Text</p>
+          </a>
+        </li>
+      </ol>
+    <div style="opacity: 0;" class="left-shadow"></div><div style="opacity: 0;" class="right-shadow"></div></div>
+
+    <ul class="sequence-nav-buttons">
+      <li class="next"><a aria-hidden="true" class="disabled" role="button" href="#">Next</a></li>
+    </ul>
+  </nav>
+
+  <div id="seq_contents_0" aria-labelledby="tab_0" aria-hidden="true" class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+     &lt;div class="xblock xblock-student_view xmodule_display 
+xmodule_VerticalModule" data-runtime-class="LmsRuntime" 
+data-init="XBlockToXModuleShim" data-block-type="vertical" 
+data-request-token="153fd8d06fc011e48dd3068753ad5b8a" 
+data-runtime-version="1" 
+data-usage-id="i4x:;_;_Engineering;_CS101;_vertical;_z224" 
+data-type="None" data-course-id="Engineering/CS101/Summer2014"&gt;
+    &lt;div class="vert-mod"&gt;
+  &lt;div class="vert vert-0" 
+data-id="i4x://Engineering/CS101/video/z223"&gt;
+    &lt;div class="xblock xblock-student_view xmodule_display 
+xmodule_VideoModule" data-runtime-class="LmsRuntime" 
+data-init="XBlockToXModuleShim" data-block-type="video" 
+data-request-token="153fd8d06fc011e48dd3068753ad5b8a" 
+data-runtime-version="1" 
+data-usage-id="i4x:;_;_Engineering;_CS101;_video;_z223" 
+data-type="Video" data-course-id="Engineering/CS101/Summer2014"&gt;
+    
+
+    &lt;h2&gt;&lt;/h2&gt;
+
+&lt;div
+    id="video_i4x-Engineering-CS101-video-z223"
+    class="video closed"
+
+    data-streams="1.00:St-OF8u3oNQ"
+
+    data-sub="security+1a"
+    
+
+    
+data-sources='["https://s3-us-west-1.amazonaws.com/prod-edx/CS101/Videos/security+1a.mp4"]'
+
+    
+data-save-state-url="/courses/Engineering/CS101/Summer2014/xblock/i4x:;_;_Engineering;_CS101;_video;_z223/handler/xmodule_handler/save_user_state"
+
+    data-caption-data-dir="None"
+    data-show-captions="true"
+    data-general-speed="1.0"
+    data-speed="null"
+    data-saved-video-position="0.0"
+    data-start="0.0"
+    data-end="0.0"
+    data-transcript-language="en"
+    data-transcript-languages='{"en": "English"}'
+    data-autoplay="False"
+    data-yt-test-timeout="1500"
+    data-yt-api-url="www.youtube.com/iframe_api"
+    data-yt-test-url="gdata.youtube.com/feeds/api/videos/"
+    
+data-transcript-translation-url="/courses/Engineering/CS101/Summer2014/xblock/i4x:;_;_Engineering;_CS101;_video;_z223/handler/transcript/translation"
+
+    
+data-transcript-available-translations-url="/courses/Engineering/CS101/Summer2014/xblock/i4x:;_;_Engineering;_CS101;_video;_z223/handler/transcript/available_translations"
+
+
+    data-autohide-html5="False"
+
+    tabindex="-1"
+&gt;
+    &lt;div class="focus_grabber first"&gt;&lt;/div&gt;
+
+    &lt;div class="tc-wrapper"&gt;
+      &lt;a href="#before-transcript_i4x-Engineering-CS101-video-z223" 
+class="nav-skip sr"&gt;Skip to a navigable version of this video's 
+transcript.&lt;/a&gt;
+
+      &lt;article class="video-wrapper"&gt;
+          &lt;span tabindex="0" class="spinner" aria-hidden="false" 
+aria-label="Loading video player"&gt;&lt;/span&gt;
+          &lt;span tabindex="-1" class="btn-play is-hidden" 
+aria-hidden="true" aria-label="Play video"&gt;&lt;/span&gt;
+          &lt;div class="video-player-pre"&gt;&lt;/div&gt;
+          &lt;section class="video-player"&gt;
+              &lt;div 
+id="i4x-Engineering-CS101-video-z223"&gt;&lt;/div&gt;
+              &lt;h3 class="hidden"&gt;No playable video sources 
+found.&lt;/h3&gt;
+          &lt;/section&gt;
+          &lt;div class="video-player-post"&gt;&lt;/div&gt;
+          &lt;section class="video-controls is-hidden"&gt;
+              &lt;div class="slider" title="Video 
+position"&gt;&lt;/div&gt;
+              &lt;div&gt;
+                  &lt;ul class="vcr"&gt;
+                      &lt;li&gt;&lt;a class="video_control" href="#" 
+title="Play" role="button" 
+aria-disabled="false"&gt;&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;div class="vidtime"&gt;0:00 / 
+0:00&lt;/div&gt;&lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;div class="secondary-controls"&gt;
+                      &lt;div class="speeds menu-container"&gt;
+                          &lt;a class="speed-button" href="#" 
+title="Speeds" role="button" aria-disabled="false"&gt;
+                              &lt;span 
+class="label"&gt;Speed&lt;/span&gt;
+                              &lt;span class="value"&gt;&lt;/span&gt;
+                          &lt;/a&gt;
+                          &lt;ol class="video-speeds menu" 
+role="menu"&gt;&lt;/ol&gt;
+                      &lt;/div&gt;
+                      &lt;div class="volume"&gt;
+                          &lt;a href="#" role="button" 
+aria-disabled="false" title="Volume" aria-label="Click on this button to
+ mute or unmute this video or press UP or DOWN buttons to increase or 
+decrease volume level."&gt;&lt;/a&gt;
+                          &lt;div role="presentation" 
+class="volume-slider-container"&gt;
+                              &lt;div 
+class="volume-slider"&gt;&lt;/div&gt;
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;a href="#" class="add-fullscreen" title="Fill 
+browser" role="button" aria-disabled="false"&gt;Fill browser&lt;/a&gt;
+                      &lt;a href="#" class="quality-control is-hidden" 
+title="HD off" role="button" aria-disabled="false"&gt;HD off&lt;/a&gt;
+
+                      &lt;div class="lang menu-container"&gt;
+                        &lt;a href="#" class="hide-subtitles" 
+title="Turn off captions" role="button" aria-
+                        disabled="false"&gt;Turn off captions&lt;/a&gt;
+                      &lt;/div&gt;
+                  &lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/section&gt;
+          &lt;a class="nav-skip sr" 
+id="before-transcript_i4x-Engineering-CS101-video-z223" 
+href="#after-transcript_i4x-Engineering-CS101-video-z223"&gt;Skip to end
+ of transcript.&lt;/a&gt;
+      &lt;/article&gt;
+
+      &lt;ol id="transcript-captions" class="subtitles" tabindex="0" 
+role="group" aria-label="Activating an item in this group will spool the
+ video to the corresponding time point. To skip transcript, go to 
+previous item."&gt;
+        &lt;li&gt;&lt;/li&gt;
+      &lt;/ol&gt;
+    &lt;/div&gt;
+
+    &lt;a class="nav-skip sr" 
+id="after-transcript_i4x-Engineering-CS101-video-z223" 
+href="#before-transcript_i4x-Engineering-CS101-video-z223"&gt;Go back to
+ start of transcript.&lt;/a&gt;
+
+    &lt;div class="focus_grabber last"&gt;&lt;/div&gt;
+  &lt;ul class="wrapper-downloads"&gt;
+        &lt;li class="video-sources video-download-button"&gt;
+            &lt;a 
+href="https://s3-us-west-1.amazonaws.com/prod-edx/CS101/Videos/security+1a.mp4"&gt;Download
+ video&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="video-tracks video-download-button"&gt;
+            &lt;a 
+href="/courses/Engineering/CS101/Summer2014/xblock/i4x:;_;_Engineering;_CS101;_video;_z223/handler/transcript/download"&gt;Download
+ transcript&lt;/a&gt;
+            &lt;div class="a11y-menu-container"&gt;
+                &lt;a class="a11y-menu-button" href="#" 
+title=".srt"&gt;.srt&lt;/a&gt;
+                &lt;ol class="a11y-menu-list"&gt;
+                  &lt;li class="a11y-menu-item active"&gt;
+		      
+                      &lt;a class="a11y-menu-item-link" href="#srt" 
+title="SubRip (.srt) file" data-value="srt"&gt;
+                        SubRip (.srt) file
+                      &lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li class="a11y-menu-item"&gt;
+		      
+                      &lt;a class="a11y-menu-item-link" href="#txt" 
+title="Text (.txt) file" data-value="txt"&gt;
+                        Text (.txt) file
+                      &lt;/a&gt;
+                  &lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class="vert vert-1" 
+data-id="i4x://Engineering/CS101/html/z222"&gt;
+    &lt;div class="xblock xblock-student_view xmodule_display 
+xmodule_HtmlModule" data-runtime-class="LmsRuntime" 
+data-init="XBlockToXModuleShim" data-block-type="html" 
+data-request-token="153fd8d06fc011e48dd3068753ad5b8a" 
+data-runtime-version="1" 
+data-usage-id="i4x:;_;_Engineering;_CS101;_html;_z222" 
+data-type="HTMLModule" data-course-id="Engineering/CS101/Summer2014"&gt;
+    
+&lt;link href="/c4x/Engineering/CS101/asset/style-edx.css" 
+rel="stylesheet" type="text/css" /&gt;
+&lt;script type="text/javascript" 
+src="/c4x/Engineering/CS101/asset/cs101-edx.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" 
+src="/c4x/Engineering/CS101/asset/cs101-table-edx.js"&gt;&lt;/script&gt;
+
+
+&lt;h1&gt;Computer Security&lt;/h1&gt;
+
+
+&lt;p&gt;
+
+
+&lt;!--
+
+-patched
+-phishing
+-bad password (dictionary)
+-Trojan (fake antivirus, fake dvd-ripper, celebrity photo)
+
+-Castle
+-Passive content vs. a program
+-Attacks: phishing trojan vulnerability
+-https
+-password advice
+-vulnerability
+-zombies
+
+--&gt;
+
+&lt;p&gt;
+Computer security is a big and kind of dramatic area, and it can look 
+scary.
+I'll talk about the most important and interesting ideas.
+Keeping safe is not that hard.
+
+&lt;h2&gt;Computer -- The Castle&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;The computer is like a castle with walls
+&lt;li&gt;Inside and outside are very different
+&lt;li&gt;Bad guy cannot just access files (bytes really) stored inside 
+the computer at will
+&lt;li&gt;Bad guy will need to work at it, as we'll see
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;img src="/c4x/Engineering/CS101/asset/security-castle.png" 
+alt="computer is like castle with walls"&gt;
+
+
+
+&lt;h2&gt;Computer Attacks&lt;/h2&gt;
+
+&lt;p&gt;
+Below we'll tour through the three most common type of attack in broad 
+categories: 1. Password attack, 2. Phishing attack, 3. Malware attack - 
+here I'm using the terminology very broadly.
+
+
+&lt;h2&gt;Bad Guy Attacks - Bulk&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;Typically the bad guys are not crafting some attack just for 
+you
+&lt;li&gt;They send in the millions rather crude attacks, just snaring 
+the most clumsy victims
+&lt;li&gt;If you avoid the most common errors, you will probably be fine
+&lt;li&gt;I don't have any anti-virus software, and I have not had any 
+problems (no Microsoft though)
+&lt;li&gt;"Spear phishing" refers to sophisticated attacks targeted at a
+ specific person - rare
+&lt;/ul&gt;
+
+&lt;p&gt;
+Although I'll talk about problems most of the time, don't get all 
+scared. I use the internet all day long, I don't have any anti-virus 
+software installed, and I have not had any problems. It probably helps 
+that I don't use any Microsoft software, which is a popular target.
+
+&lt;h2&gt;-1- Password Attacks&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;The bad guy could try to guess your password on a site
+&lt;li&gt;Try to log in again and again
+&lt;li&gt;Works if the password is common, e.g. "password" "password123"
+&lt;li&gt;Also known as "dictionary attack", try all the words in a 
+dictionary
+&lt;li&gt;This fails mostly, but success here and there with an account 
+with a poor password is good enough for the bad guys
+&lt;li&gt;Therefore: avoid having an obvious or commonly used password
+&lt;br&gt;-a word in a dictionary
+&lt;br&gt;-a pun or something that someone else might also use
+&lt;/ul&gt;
+
+&lt;p&gt;
+The bad guy could try to just guess your password, attempting to log in 
+again and again, hoping to get lucky. They might know the username and 
+just guess the password, or more likely they are guessing both. There 
+are 86400 seconds in a day, and suppose your bank permits 1 login 
+attempt per second. The bad guy could just go through the list of 100000
+ common passwords ("password", "password123", "janexyz", ...) trying to 
+get lucky. This works, since they only need to guess correctly for a few
+ accounts, and they can do the attack in bulk.
+
+&lt;p&gt;
+Clearly, the bank or whatever should detect thousands of bad logins and 
+slow down or freeze the account. This can cause problems for the 
+legitimate user however, so it's a balance. One simple policy is that 
+the Bank can process login attempts at a slowish rate, such one every 
+second to prevent the bad guys from trying 100 billion different 
+passwords.
+
+&lt;h2&gt;Dictionary Attack Example&lt;/h2&gt;
+
+&lt;p&gt;
+Here's a real "log file" from my codingbat.com server where it routinely
+ records what happens each day. What you see here is the attacker is 
+trying guess both the username and password on the account. It happens 
+that the username for each attempt is printed in the log file but the 
+password is not. No doubt they are trying common passwords, such as 
+"secret" "password12" etc. It's funny to me that you can see that their 
+list of usernames to try is sort of alphabetical order, and they are 
+just running through it in the most obvious way. So what you need to 
+understand is .. this sort of attack is clicking along, every second of 
+every day aimed at basically all the servers on the internet. They just 
+need to succeed with a few accounts here and there, even though they 
+fail 99.99% of the time. This is why you should not have a password 
+which is close to a dictionary word or someone's name, or  is a password
+ people often choose. The good news is .. with just 4 random letters 
+added to your password .. suddenly this dictionary attack is not going 
+to work -- there's not enough seconds in the day. Note that 49.212.7.205
+ is the IP address of the machine attacking codingbat.com. It appears to
+ be in Japan -- it's probably some person's Windows XP machine that has 
+been compromised and is now used as a "zombie" under the control of the 
+bad guy to launch more attacks. The zombie is probably running attacks 
+at many servers all at the same time, but here we just see the ones 
+directed at codingbat, about one login attempt every 3 seconds.
+
+&lt;pre&gt;
+...
+Mar  6 06:26:20 codingbat sshd[30924]: Failed password for invalid user 
+alex from 49.212.7.205 port 36268 ssh2
+Mar  6 06:26:22 codingbat sshd[30926]: Failed password for invalid user 
+alex from 49.212.7.205 port 36605 ssh2
+Mar  6 06:26:26 codingbat sshd[30928]: Failed password for invalid user 
+alex from 49.212.7.205 port 36937 ssh2
+Mar  6 06:26:29 codingbat sshd[30930]: Failed password for invalid user 
+adam from 49.212.7.205 port 37212 ssh2
+Mar  6 06:26:32 codingbat sshd[30932]: Failed password for invalid user 
+fax from 49.212.7.205 port 37546 ssh2
+Mar  6 06:26:34 codingbat sshd[30934]: Failed password for invalid user 
+fax from 49.212.7.205 port 37864 ssh2
+Mar  6 06:26:38 codingbat sshd[30936]: Failed password for invalid user 
+demo from 49.212.7.205 port 38201 ssh2
+Mar  6 06:26:41 codingbat sshd[30938]: Failed password for invalid user 
+demo from 49.212.7.205 port 38561 ssh2
+Mar  6 06:26:44 codingbat sshd[30940]: Failed password for invalid user 
+amanda from 49.212.7.205 port 38911 ssh2
+Mar  6 06:26:47 codingbat sshd[30942]: Failed password for invalid user 
+angie from 49.212.7.205 port 39244 ssh2
+Mar  6 06:26:51 codingbat sshd[30944]: Failed password for invalid user 
+angie from 49.212.7.205 port 39552 ssh2
+...
+&lt;/pre&gt;
+
+&lt;h2&gt;Bad Passwords&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;Do not need to be super elaborate (some sites go crazy with 
+this)
+&lt;li&gt;List of common passwords - do not use these!
+&lt;pre&gt;
+-Common passwords-
+password
+password1
+123456789
+12345678
+1234567890
+abc123
+computer
+tigger
+1234
+qwerty
+&lt;/pre&gt;
+&lt;li&gt;Avoid a password that thousands of others out there have also 
+chosen
+&lt;/ul&gt;
+
+&lt;h2&gt;Good Passwords&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;What I do for secure passwords, e.g a bank site
+&lt;li&gt;Start with a word, add misspelling, then add some random 
+letters
+&lt;li&gt;Could add some digits and/or punctuation and maybe some upper 
+case letters
+&lt;br&gt; mottens,erx -- fine
+&lt;br&gt; Mottens,9erx  -- better
+&lt;br&gt; MotenX,97erx  -- probably more complex than necessary
+
+&lt;li&gt;Important that the "erx" is truly nonsense, not like "xyz" 
+that someone else on earth might tend to pick.
+
+&lt;li&gt;Other problem: what if the site itself is compromised, so the 
+bad-guy possibly gets your password that way? Therefore, do not re-use 
+your passwords across important sites like banks.
+
+&lt;li&gt;Consider writing down important passwords on a slip of paper 
+at home. Otherwise it's hard to keep it all straight in your head.
+
+&lt;/ul&gt;
+
+&lt;p&gt;
+You do not need a super elaborate password, but you don't want it to be 
+susceptible to a dictionary attack either. My suggestions:
+&lt;ul&gt;
+ &lt;li&gt;The list of common passwords contains passwords that are just
+ a word or a word plus a tiny variation, like "jane" or "secret1" or 
+"mittens123", or two words like "catmittens", so it's vital that your 
+password does not look like that.
+ &lt;li&gt;It's ok to have a word fragment, but it should also include 
+significant nonsense letters. Personally, I like starting with a word, 
+since it is easy to remember and fast to type, but then random junk 
+needs to be added in and around it.
+
+ &lt;li&gt;Some sites go crazy, requiring many upper case letters, and 
+digits, and punctuation letters. I think that's not necessary. It's 
+"security theater": adding more complexity and the appearance of action 
+but without actually adding to security.
+&lt;/ul&gt;
+
+&lt;p&gt;
+For an important site like a bank, you should use a password different 
+from your other passwords. It should not be the case that by stealing 
+your facebook or twitter password, they now have access to your bank. I 
+write the passwords down on a piece of paper at my house in case I 
+forget. The bad guy in Russia or whatever does not have some team of 
+ninjas that's going to break into my house and get passwords off my slip
+ of paper. The attacks are  bulk, mindless affairs that work on the 
+low-hanging fruit. One technique for writing down passwords is to pick a
+ little suffix you memorize, like "x936" or whatever, and that always 
+goes on the end of your passwords. Write the passwords down, but never 
+the suffix. That way, even with the piece of paper, a bad guy still does
+ not have the passwords. Or maybe its better to just write the passwords
+ out clearly, so your family can access your email etc. if you are in 
+the hospital.
+
+&lt;p&gt;
+Email is tricky -- once they have your email password, then they may be 
+able to do a password reset and get into your account. In that sense, 
+your email password is the most important.
+
+
+
+
+&lt;h2&gt;-2- Phishing Attacks&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;"Phishing", i.e. the bad guy is "fishing" for you
+&lt;li&gt;Bad guy tricks you into exposing your password or whatever
+&lt;li&gt;No doubt you have received many phishing emails
+&lt;li&gt;e.g. -- phishing email, points at bad guy site, not real eBay 
+site
+&lt;li&gt;Email might say something provocative - "fraud alert, click 
+immediately"
+&lt;li&gt;When I type in password to either of these .. it goes to the 
+bad guy
+&lt;li&gt;Arrow is over first link, see url at bottom of email
+&lt;li&gt;Note: not related to an actual transaction or account .. bad 
+guys just spew these out, hoping to fool someone
+&lt;li&gt;Alternately could have a phishing web site that imitates the 
+real eBay site
+&lt;li&gt;Bad guys emails out or in some other way distributes the url 
+to phishing site
+&lt;li&gt;Bad guys want passwords for sites that have something to do 
+with money
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;img src="/c4x/Engineering/CS101/asset/security-ebay-phish.png" 
+border="1" alt="ebay phishing email"&gt;
+
+&lt;p&gt;
+Probably the most common form of attack. The email is forged to appear 
+from someone you might trust -- including logos etc -- I have gotten 
+ones which I personally found quite convincing. I had to slow down and 
+really pay attention to realize that it was a phishing attempt. It does 
+not help that ATT, Schwab, Citigroup, etc. do in fact send you email all
+ the time about your accounts.
+
+&lt;p&gt;
+Here is an example ebay phishing email sent to me. The arrow (not shown)
+ is over the first blue link, so its url appears at the bottom of the 
+message. Note that the url is not an ebay url, it's some bad guy url 
+which will attempt to fool us into typing in our username/password. Note
+ that there is no actual sale or anything that prompted this message -- 
+the bad guys just spew out millions of these emails, in the hopes that 
+one make sense to someone.
+
+&lt;p&gt;
+The most obvious valuable information the bad guy can get from you is a 
+password to a bank account or some other account that contains something
+ valuable. However as a simplification, if the bad guy can get the 
+password to your email address, then they may be able to get access to 
+most things by clicking the "I forgot my password" button on your bank 
+site. So your email password is very important.
+
+&lt;h2&gt;Fake ATM Machine -- Real World Analogy&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;Funny "phishing" crime in real life
+&lt;li&gt;Fake ATM in front of bank .. prints error message, but records
+ card details and PIN for bad guy
+&lt;/ul&gt;
+
+&lt;p&gt;
+Criminals put up a fake ATM machine made of plywood in front of a real 
+ATM, with a "under construction" sign. The victim would put their card 
+into the fake ATM and type in their PIN. Then the machine would print an
+ "out of order" message and give the card back. The bad guys in this way
+ collected all the card numbers and PINs and drained the accounts over 
+the weekend. This is a nice real-world analog of fake-site phishing.
+
+
+&lt;h2&gt;Avoiding Phishing&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;Don't trust urls in emails or random sites, especially when 
+leading to a login page
+&lt;li&gt; a. Scrutinize the url as shown in your browser or email 
+program
+&lt;br&gt;-Bad guy url will try to look legit, like 
+&lt;b&gt;www.ebay.bad-guy.ru&lt;/b&gt;
+&lt;li&gt; b. (more secure) Type the url in yourself -- if it claims to 
+be from ebay, type in www.ebay.com yourself in your browser. This is 
+what I tell my parents to do, as it's a simple rule.
+&lt;li&gt;Firefox etc. can do extra green hilighting of "real" site
+&lt;br&gt;-e.g. www.schwab.com (demo)
+&lt;li&gt;Look for &lt;b&gt;https&lt;/b&gt; in the url (below)
+
+&lt;/ul&gt;
+
+
+
+&lt;h2&gt;HTTPS&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+
+&lt;li&gt;HTTPS - "secure" variant of HTTP to transfer the bytes of a 
+web page over the internet
+&lt;li&gt;Does two things:
+&lt;li&gt;a. HTTPS verifies the other end, so it really is 
+www.schwab.com or whatever
+&lt;br&gt;-Helps with anti-phish, but the user still needs to look at 
+the url
+&lt;br&gt;-Checking that it's www.schwab.com not www.schwarb.bad-guy.ru
+&lt;li&gt;b. HTTPS encrypts all the traffic, so interception of the 
+bytes does not work
+
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+HTTPS is the "secure" http variant, https://www.ebay.com/. In 
+particular, the server must hold a certificate which is verified 
+beforehand by an authority that the server really represents 
+www.ebay.com or whatever. You have to pay money and file some paperwork 
+to get an https certificate -- hard for a bad guy to do, although not 
+impossible. The idea with https is that the user can see the identity of
+ who they are talking to. In the browser interface, https is typically 
+accompanied by a little lock icon, and some banks etc. mention to their 
+users to look for the lock. Having users pay attention 100% of the time 
+is not a perfect security solution, but it helps.
+
+&lt;h2&gt;Encryption vs. Bad Guy Packet Eavesdropping&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+
+&lt;li&gt;Recall from the networking section that it's easy to listen in
+ to neighboring computers packets (ethernet broadcast)
+&lt;li&gt;"Encryption" is a way of scrambling the bytes so that even if 
+intercepted, they are meaningless
+&lt;li&gt;HTTPS provides encryption, in addition to its url-verification
+ feature
+&lt;li&gt;Example: this is a picture where I went to Starbucks, then 
+typed in password to log in to www.schwab.com using their free wi-fi
+&lt;li&gt;The packets sent between my computer and schwab were broadcast
+ so anyone in the Starbucks could see them
+&lt;li&gt;Probably several laptops there were infected with malware, and
+ malware often specifically targets financial info (e.g. Schwab)
+&lt;li&gt;Could someone there have listened in, for example, when I 
+typed in my password?
+&lt;li&gt;No -- HTTPS encrypted all the packets before they were 
+broadcast
+&lt;li&gt;Note if my machine had malware on it, it could steal my 
+password. HTTPS only takes care of the networking.
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;img src="/c4x/Engineering/CS101/asset/security-starbucks-https.jpg" 
+alt="logging into schwab.com at Starbucks to show https"&gt;
+
+&lt;p&gt;
+When you go on to wifi and visit a web page and type something in ... 
+the packets for all that are just being broadcast in the room, so anyone
+ nearby can observe the packets, listening in (recall the 
+ethernet-packet-broadcast material from the networking section). For the
+ most part, this is harmless. In some cases, say when you are typing in a
+ credit card number, you want the communication to be 
+&lt;b&gt;encrypted&lt;/b&gt; (encoded), so that someone listening in 
+cannot read it. The &lt;b&gt;https&lt;/b&gt; scheme above also does 
+encryption, so you will notice that when you go the page to type in a 
+credit card number, the url begins with "https://". On such page, all 
+the packets are encrypted, so someone can listen and see the packets, 
+but they will appear to be random garbage. The eavesdropper cannot 
+unscramble the packets to see what's inside, or forge a packet. So Https
+ blends two security provisions -- (a) verifying that it really is the 
+www.mybank.com or whatever server on the other end and (b) encrypting 
+all the packets of the communication.
+
+
+&lt;h2&gt;-3- Malware Attacks&lt;/h2&gt;
+
+&lt;p&gt;This is a big category, where the bad guy tricks the victim 
+into running bad software ("malware") on the victims computer. I'm 
+lumping viruses, worms, and trojans all into this category.
+
+&lt;h2&gt;How Do I Feel About This File?&lt;/h2&gt;
+
+
+&lt;ul class="slide"&gt;
+ &lt;li&gt;Suppose a bad guy emails you the following sort of file:
+
+ &lt;li&gt;A plain .TXT file, which you open and read on your computer
+ &lt;li&gt;A .JPG file, which you then open and look at on your computer
+ &lt;li&gt;A program .EXE file -- a program -- which you copy on to your
+ computer and run (.EXE is just a windows convention, but I'll use it 
+here to indicate a program)
+ &lt;li&gt;A .DOC file which you then open and read on your computer
+
+&lt;/ul&gt;
+
+&lt;h2&gt;Passive Content = Safe, Program = Unsafe&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;If the bad guy gets you to run bad guy authored code on your 
+computer, the computer is compromised, the bad guy wins
+&lt;li&gt;The code can &lt;b&gt;take actions&lt;/b&gt; and it's inside 
+the computer
+&lt;li&gt;&lt;b&gt;Key:&lt;/b&gt; if bad guy authored code is downloaded
+ to the computer and runs .. the bad guys has won
+&lt;li&gt;Variations below will all center on this downloaded ".EXE" 
+case
+&lt;li&gt;So we trust passive content (.TXT .JPG) but not active 
+programs (.DOC .EXE).
+&lt;li&gt;Unfortunately, many seemingly passive formats, such as .DOC, 
+can have "program" type qualities in them as an advanced feature
+&lt;li&gt;e.g. .DOC can be unsafe because of Microsoft Visual Basic 
+macros embedded ... this used to be a huge source of problems (search 
+for "macro virus")
+&lt;li&gt;"Malware" - generic term for program that does something bad
+&lt;/ul&gt;
+
+&lt;p&gt;
+The last, .exe case is the main risk here, although all of the above 
+scenarios could result in problems. If code written by the bad guy, a 
+.exe, runs on your computer, the bad guy now in essence has control and 
+access to the data on your computer.
+
+&lt;p&gt;
+Suppose the bad guy is sitting at the keyboard of your unlocked 
+computer, obviously they can do whatever they want with your data. The 
+.exe case is very similar -- the code in the .exe could do what the bad 
+guy wants -- look for a particular file, email it off the machine, etc. 
+Most of the "attacks" listed below in essence try to re-create the .exe 
+case, and the defenses center on preventing the .exe case.
+
+&lt;p&gt;
+"Malware" is the general term for a program written by the bad guy to do
+ bad things to your machine - break in to the machine, steal passwords, 
+send spam, etc.
+
+&lt;h2&gt;Bad Guy Malware .EXE Techniques&lt;/h2&gt;
+
+
+&lt;h2&gt;Malware 1 - Trojan&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;Trojan is malware disguised as something else
+&lt;li&gt;So the user downloads it or accesses it, not aware that it 
+will do something bad
+&lt;li&gt;e.g. JustinBieberJPEG.exe
+&lt;li&gt;e.g. SuperAntiVirus.exe -- this is actually a common Trojan 
+ruse!
+&lt;li&gt;Try to make it look like harmless content, not a program
+&lt;li&gt;Claim to be a program that does something many people want, 
+but really it's malware
+&lt;li&gt;Operating systems may have helpful warning "this is a program 
+you downloaded, do you want to run it?"
+&lt;li&gt;Therefore:
+&lt;li&gt;Don't run programs from random sources (google it first, see 
+what people say)
+&lt;li&gt;If something is from a well known domain and has lots of 
+downloads, I figure someone would have flagged it if it was malware
+&lt;/ul&gt;
+
+&lt;p&gt;
+A "trojan" is a malware disguised as something else, like 
+"awesome-cursors.exe" or "fun-game.exe" or "JustinBeiber.JPEG.exe" 
+(Windows is vulnerable to extensions other than .exe, it's just used for
+ the examples here). The term refers to the Trojan Horse story from 
+antiquity. If the user can be tricked into double clicking the trojan, 
+running it, then the bad guys have won. The https is no defense. On Mac 
+OS X, heuristics have been added where it puts up a dialog "This was 
+just downloaded and it is a program; are you sure you want to run it?"
+
+&lt;h2&gt;Malware 2 - Vulnerability&lt;/h2&gt;
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;Suppose there is a &lt;b&gt;bug&lt;/b&gt; in the Flash 
+animation display program
+&lt;li&gt;When fed certain pathologic animation bytes, the program 
+breaks and gives access to the machine
+&lt;li&gt;So the bad guy puts a malicious Flash animation, and then 
+sends links to it on sites or in spam
+&lt;li&gt;Just visiting the page with the bad content is enough to 
+compromise the machine if it is vulnerable
+&lt;li&gt;This is probably the most scary case, as the user does very 
+little
+&lt;li&gt;Solution:
+&lt;li&gt;Keep web-facing software up to date
+&lt;li&gt;All browsers now have strong auto-update channels, so by 
+default the right thing tends to happen
+&lt;li&gt;Aside: this is also why having a proprietary format like Flash
+ be a key part of the internet is maybe not a good architecture. People 
+were very dependent on Adobe to fix the software very quickly, and 
+Adobe's record was very uneven.
+&lt;/ul&gt;
+
+&lt;p&gt;
+Suppose there is an engineering flaw in Firefox or the Flash player or 
+some other  software on your machine, such that if it sees a particular 
+sequence of bytes as input, there is bug that allows a takeover of the 
+machine. This is called a "vulnerability", and it is one of the scary 
+cases. If the user browses over to a web site this is hosting the 
+"attack" content and their browser is vulnerable, then the bad guy can 
+get it just from that. The bad guy can make the web site appear 
+attractive, post links on reddit or whatever to try to drive traffic to 
+the site. This attack is scary because it does not require the user to 
+do anything especially foolish.
+
+&lt;p&gt;
+Such vulnerabilities in Flash and IE used to be quite common. However, 
+the engineering culture seems to be catching up, and this case is 
+becoming more rare. The most important step is being sure to run the 
+most up to date, current version of your browser and any plugins such as
+ Flash. Firefox et al have switched to make programs auto-check for new 
+versions, so the user does not need to do much to have the most recent 
+version. Often a vulnerability is fixed, and months later attackers 
+start using it on sites, but they can still succeed with users using old
+ versions.
+
+
+&lt;h2&gt;Safety Recap&lt;/h2&gt;
+
+
+&lt;ul class="slide"&gt;
+&lt;li&gt;1. Password attack
+&lt;br&gt;-Don't use a bad password for an important site (e.g. bank)
+&lt;br&gt;-Don't re-use passwords across important sites
+&lt;li&gt;2. Phishing Attack
+&lt;br&gt;-Proceed carefully with content from email, or with 
+provocative titles
+&lt;br&gt;-Look at the browser url-area when typing in password
+&lt;br&gt;-Or just type in "www.schwab.com" yourself in the browser 
+instead of clicking in the email
+&lt;li&gt;3. Malware Attack
+&lt;br&gt;-Trojan - be very wary of downloading and running code (google
+ the name or source)
+&lt;br&gt;-Vulnerability case - keep internet-facing software on 
+auto-update to stay at the latest
+&lt;/ul&gt;
+
+&lt;p&gt;
+Let's stay safe out there!
+
+
+
+
+
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div aria-labelledby="tab_0" id="seq_content" role="tabpanel">
+     <div class="xblock xblock-student_view xmodule_display xmodule_VerticalModule xblock-initialized" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="vertical" data-request-token="153fd8d06fc011e48dd3068753ad5b8a" data-runtime-version="1" data-usage-id="i4x:;_;_Engineering;_CS101;_vertical;_z224" data-type="None" data-course-id="Engineering/CS101/Summer2014">
+    <div class="vert-mod">
+  <div class="vert vert-0" data-id="i4x://Engineering/CS101/video/z223">
+    <div class="xblock xblock-student_view xmodule_display xmodule_VideoModule xblock-initialized" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="video" data-request-token="153fd8d06fc011e48dd3068753ad5b8a" data-runtime-version="1" data-usage-id="i4x:;_;_Engineering;_CS101;_video;_z223" data-type="Video" data-course-id="Engineering/CS101/Summer2014">
+    
+
+    <h2></h2>
+
+<div id="video_i4x-Engineering-CS101-video-z223" class="video closed is-captions-rendered is-initialized" data-streams="1.00:St-OF8u3oNQ" data-sub="security+1a" data-sources="[&quot;https://s3-us-west-1.amazonaws.com/prod-edx/CS101/Videos/security+1a.mp4&quot;]" data-save-state-url="/courses/Engineering/CS101/Summer2014/xblock/i4x:;_;_Engineering;_CS101;_video;_z223/handler/xmodule_handler/save_user_state" data-caption-data-dir="None" data-show-captions="true" data-general-speed="1.0" data-speed="null" data-saved-video-position="0.0" data-start="0.0" data-end="0.0" data-transcript-language="en" data-transcript-languages="{&quot;en&quot;: &quot;English&quot;}" data-autoplay="False" data-yt-test-timeout="1500" data-yt-api-url="www.youtube.com/iframe_api" data-yt-test-url="gdata.youtube.com/feeds/api/videos/" data-transcript-translation-url="/courses/Engineering/CS101/Summer2014/xblock/i4x:;_;_Engineering;_CS101;_video;_z223/handler/transcript/translation" data-transcript-available-translations-url="/courses/Engineering/CS101/Summer2014/xblock/i4x:;_;_Engineering;_CS101;_video;_z223/handler/transcript/available_translations" data-autohide-html5="False" tabindex="-1">
+    <div tabindex="-1" class="focus_grabber first"></div>
+
+    <div class="tc-wrapper">
+      <a href="#before-transcript_i4x-Engineering-CS101-video-z223" class="nav-skip sr">Skip to a navigable version of this video's transcript.</a>
+
+      <article class="video-wrapper">
+          <span tabindex="-1" class="spinner" aria-hidden="true" aria-label="Loading video player"></span>
+          <span tabindex="-1" class="btn-play is-hidden" aria-hidden="true" aria-label="Play video"></span>
+          <div class="video-player-pre"></div>
+          <section class="video-player">
+              <iframe style="height: 461.25px; width: 820px; top: 25.875px; left: 0px;" tabindex="-1" src="lessons_files/St-OF8u3oNQ.html" title="YouTube video player" allowfullscreen="1" id="i4x-Engineering-CS101-video-z223" frameborder="0" height="360" width="640"></iframe>
+              <h3 class="hidden">No playable video sources found.</h3>
+          </section>
+          <div class="video-player-post"></div>
+          <section style="" class="video-controls">
+              <div tabindex="-1" aria-disabled="false" style="" class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" title="Video position"><div style="width: 0%;" class="ui-slider-range ui-widget-header ui-slider-range-min"></div><a aria-valuetext="0 seconds" aria-disabled="false" title="Video position" role="slider" style="left: 0%;" class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
+              <div>
+                  <ul class="vcr">
+                      <li><a class="video_control play" href="#" title="Play" role="button" aria-disabled="false"></a></li>
+                      <li><div class="vidtime">0:00 / 9:17</div></li>
+                  </ul>
+                  <div class="secondary-controls">
+                      <div class="speeds menu-container">
+                          <a class="speed-button" href="#" title="Speeds" role="button" aria-disabled="false">
+                              <span class="label">Speed</span>
+                              <span class="value">1.0x</span>
+                          </a>
+                          <ol class="video-speeds menu" role="menu"><li data-speed="2.0" role="presentation"><a class="speed-link" href="#" role="menuitem" tabindex="-1">2.0x</a></li><li data-speed="1.50" role="presentation"><a class="speed-link" href="#" role="menuitem" tabindex="-1">1.50x</a></li><li data-speed="1.25" role="presentation"><a class="speed-link" href="#" role="menuitem" tabindex="-1">1.25x</a></li><li class="is-active" data-speed="1.0" role="presentation"><a class="speed-link" href="#" role="menuitem" tabindex="-1">1.0x</a></li><li data-speed="0.50" role="presentation"><a class="speed-link" href="#" role="menuitem" tabindex="-1">0.50x</a></li></ol>
+                      </div>
+                      <div class="volume">
+                          <a href="#" role="button" aria-disabled="false" title="Volume" aria-label="Click on this button to mute or unmute this video or press UP or DOWN buttons to increase or decrease volume level."></a><div aria-atomic="false" aria-live="polite" aria-hidden="false" role="status" class="sr video-live-region">Maximum Volume.</div>
+                          <div role="presentation" class="volume-slider-container">
+                              <div aria-disabled="false" class="volume-slider ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all"><div style="height: 100%;" class="ui-slider-range ui-widget-header ui-slider-range-min"></div><a tabindex="-1" style="bottom: 100%;" class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
+                          </div>
+                      </div>
+                      <a href="#" class="add-fullscreen" title="Fill browser" role="button" aria-disabled="false">Fill browser</a>
+                      <a style="display: inline;" href="#" class="quality-control is-hidden" title="HD off" role="button" aria-disabled="false">HD off</a>
+
+                      <div class="lang menu-container">
+                        <a href="#" class="hide-subtitles" title="Turn on captions" role="button" aria-="" disabled="false">Turn on captions</a>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <a class="nav-skip sr" id="before-transcript_i4x-Engineering-CS101-video-z223" href="#after-transcript_i4x-Engineering-CS101-video-z223">Skip to end of transcript.</a>
+      </article>
+
+      <ol style="max-height: 460px;" id="transcript-captions" class="subtitles" tabindex="0" role="group" aria-label="Activating an item in this group will spool the video to the corresponding time point. To skip transcript, go to previous item."><li tabindex="-1" style="height: 167.5px;" class="spacing"></li><li style="" tabindex="0" data-start="1350" data-index="0">So in this section, I'm going to talk about computer security. Now, computer</li><li tabindex="0" data-start="5549" data-index="1">security is kind of a scary sort of dramatic topic but it doesn't need to be. So I'm</li><li tabindex="0" data-start="11400" data-index="2">going to talk about some of the, the most important cases and in particular, you</li><li tabindex="0" data-start="15910" data-index="3">know, staying safe is not that hard, it doesn't need to be that complicated. So, for</li><li tabindex="0" data-start="20580" data-index="4">starters, I want to establish this model of the computer. I'll say the computer is</li><li tabindex="0" data-start="25000" data-index="5">sort of like a castle. So let's say here I've, I've</li><li tabindex="0" data-start="26930" data-index="6">drawn a computer and you know, there's this CPU and maybe here is a hard drive or</li><li tabindex="0" data-start="31230" data-index="7">flash drive or something with bytes on it that you care about and let's say you've</li><li tabindex="0" data-start="34109" data-index="8">got your secretdiary.txt. There's some bytes here that you, you care about. So,</li><li tabindex="0" data-start="40140" data-index="9">I'm going to say it's like a castle in that, the computer has the sort of, I've</li><li tabindex="0" data-start="43210" data-index="10">drawn this bold boarder around like it has a real wall and the bad guy's out here,</li><li tabindex="0" data-start="48420" data-index="11">he's outside the wall. Now, the movie is sometimes that, it seems like, well, the bad</li><li tabindex="0" data-start="51749" data-index="12">guy just drives up in advance, you know, outside your house and they have got some</li><li tabindex="0" data-start="54870" data-index="13">gadgets in and you know, they'll just do something and they just get the bytes off</li><li tabindex="0" data-start="57920" data-index="14">there. And that's just not how it works. By default, the bytes are on the computer.</li><li tabindex="0" data-start="63859" data-index="15">You've got the computer, the bad guy is on the outside like</li><li tabindex="0" data-start="66229" data-index="16">by default it's kind of safe - or to put it another way, when we look at the different</li><li tabindex="0" data-start="70969" data-index="17">things the bad guy might do, they all involve being outside and trying to get</li><li tabindex="0" data-start="74280" data-index="18">inside but by default, they're outside. So, what I want to do is talk about the</li><li tabindex="0" data-start="78880" data-index="19">different so called attacks, the bad guy might do. One sort of broad pattern I want</li><li tabindex="0" data-start="85789" data-index="20">to emphasize is that, it's not the case that there's a bad guy with the picture of</li><li tabindex="0" data-start="90109" data-index="21">you sitting in some apartment like scheming like how to get on to your</li><li tabindex="0" data-start="95740" data-index="22">computer. Generally the way it works is that the bad guys are working what you say</li><li tabindex="0" data-start="99780" data-index="23">in bulk. They don't know about you, they don't know about anything in particular. They're</li><li tabindex="0" data-start="103560" data-index="24">crafting not Fairly Medium complicated attacks. And then just sending out</li><li tabindex="0" data-start="112109" data-index="25">millions and millions of copies of that attack, not putting any thought into</li><li tabindex="0" data-start="116200" data-index="26">any particular one but j st trying to snag essentially victims who have taken</li><li tabindex="0" data-start="120649" data-index="27">the least precautions. So if you just do, - it's not that you need to have super</li><li tabindex="0" data-start="125549" data-index="28">awesome security - you just need to avoid making very common mistakes and if you</li><li tabindex="0" data-start="129690" data-index="29">just avoid the common mistakes, you're probably going to be okay. I should</li><li tabindex="0" data-start="133750" data-index="30">mention that sometimes for like corporate espionage or whatever you might</li><li tabindex="0" data-start="137620" data-index="31">get a government or someone who's trying very hard to break into someone's computer.</li><li tabindex="0" data-start="142000" data-index="32">That, that's sort of a different a different class of things. I'm not going</li><li tabindex="0" data-start="144580" data-index="33">to worry about that case. Presumably if you work in the CIA or something you've got</li><li tabindex="0" data-start="148500" data-index="34">your own class. So the first class of attack I'll talk about is password</li><li tabindex="0" data-start="153890" data-index="35">attacks. So the bad guy could try to just guess passwords to get into someone's</li><li tabindex="0" data-start="160490" data-index="36">account so you know Gmail, or so you know Gmail. Whatever, I'm sure this just</li><li tabindex="0" data-start="163030" data-index="37">happens all the time. This is sometimes called the dictionary attack - the idea being</li><li tabindex="0" data-start="166640" data-index="38">that the bad guy can just sort of you know</li><li tabindex="0" data-start="168010" data-index="39">enter "aardvark" or "acre", you know, just sort of</li><li tabindex="0" data-start="169940" data-index="40">like go through everywhere in the dictionary and just guess it. There is 86400 seconds</li><li tabindex="0" data-start="174980" data-index="41">in a day that kind of, it you would sort of</li><li tabindex="0" data-start="176870" data-index="42">guess the password of every few seconds. You know you can go through quite a few.</li><li tabindex="0" data-start="181660" data-index="43">The trick here to avoid password problems is you just need to avoid very obvious or</li><li tabindex="0" data-start="187510" data-index="44">very common passwords. So your password should never just be a word that appears</li><li tabindex="0" data-start="192680" data-index="45">in the dictionary or a pun or a little bit of</li><li tabindex="0" data-start="195580" data-index="46">work place that someone else that you know many other people on the Internet might</li><li tabindex="0" data-start="198110" data-index="47">have thought of. So actually I can showyou an example of a, this is sometimes called</li><li tabindex="0" data-start="203290" data-index="48">the dictionary attack (maybe I already said that). So</li><li tabindex="0" data-start="205790" data-index="49">actually this is a live, a real example of a dictionary attack. So I run the</li><li tabindex="0" data-start="209370" data-index="50">coding back.com server and. It turns out, bad guys are trying to break in to that</li><li tabindex="0" data-start="215450" data-index="51">thing like all the time. So, it has, it keeps a log file which have just</li><li tabindex="0" data-start="218410" data-index="52">what's happened. That's a standard thing for servers to do. I have here; I just put</li><li tabindex="0" data-start="221180" data-index="53">a copy of the log files. It's really cryptic but I'll walk you</li><li tabindex="0" data-start="223270" data-index="54">through it. So what this says is at On March sixth at 6:26:20 it says failed</li><li tabindex="0" data-start="233680" data-index="55">password invalid user Alex from some IP address. It's actually an IP address from</li><li tabindex="0" data-start="239830" data-index="56">Japan so what that's saying is there is a log in attempt and it failed for the user</li><li tabindex="0" data-start="243260" data-index="57">Alex and then two seconds later there is another one and then when is it, four</li><li tabindex="0" data-start="250480" data-index="58">seconds after that there is another one is Alex three times and then there are those</li><li tabindex="0" data-start="254140" data-index="59">for failed one for Adam and for user Fax or whatever and so. This kind of shows you</li><li tabindex="0" data-start="259310" data-index="60">the sort of bulk quality so there's just some bad guy machine out there and you can</li><li tabindex="0" data-start="264850" data-index="61">see every two or three seconds it's just trying another password and. It's just</li><li tabindex="0" data-start="270940" data-index="62">always wrong. It's just guessing what are the odds that's going to happen but that</li><li tabindex="0" data-start="273850" data-index="63">match very, very low but that's how the bad guys operate. It's not that they have</li><li tabindex="0" data-start="278690" data-index="64">a high percentage idea. It's quite the opposite. They have this very low</li><li tabindex="0" data-start="283190" data-index="65">percentage idea and then they just try it a very large number of times. So it's also</li><li tabindex="0" data-start="289810" data-index="66">I think fine that you can see they have some sort of a list of user names to try</li><li tabindex="0" data-start="292790" data-index="67">and it's kind of alphabetical right like they are just, it's just gullible, they're</li><li tabindex="0" data-start="295710" data-index="68">just going through so they're just going through so they're just kind of I guess</li><li tabindex="0" data-start="300260" data-index="69">not to be too scared but that's just going on all the time, right. The bad guys are</li><li tabindex="0" data-start="304220" data-index="70">just trying every server they can find every couple of seconds whatever just like</li><li tabindex="0" data-start="309320" data-index="71">constantly so I'll talk about in a second if you just have a password that's a</li><li tabindex="0" data-start="315220" data-index="72">little bit hard to guess. They're, they're only the guessing the most obvious kind of</li><li tabindex="0" data-start="320639" data-index="73">password for that sort of attack. So here's a It was interesting, I just looked</li><li tabindex="0" data-start="326580" data-index="74">up a list of just common passwords so here's. I'm sure it depends on how the</li><li tabindex="0" data-start="332430" data-index="75">surveys is down but here is some password so the number one common password was the</li><li tabindex="0" data-start="336030" data-index="76">word password. Number two was password one. No doubt that's when they require you</li><li tabindex="0" data-start="341380" data-index="77">to put a number on there and some of you out there might actually do that. I know</li><li tabindex="0" data-start="342730" data-index="78">some of you out there may have actually done that. Here's someone as password as</li><li tabindex="0" data-start="345440" data-index="79">one through nine or one through eight or ABC123. It's not a word but it's kind of a</li><li tabindex="0" data-start="351410" data-index="80">pattern. It's pretty easy to match it to a lot of people trying that password Or</li><li tabindex="0" data-start="354190" data-index="81">QWERTY. Another example is almost trying to be clever. But if you're clever in the</li><li tabindex="0" data-start="357419" data-index="82">way that like a million other people are going to have the same idea, that is not</li><li tabindex="0" data-start="361500" data-index="83">clever. So those are all password patterns to avoid like you can't pick something so</li><li tabindex="0" data-start="365690" data-index="84">obvious that other people might try it. So, the good news is that having strict</li><li tabindex="0" data-start="371360" data-index="85">password is not really that hard and some in sites in my opinion really go overboard</li><li tabindex="0" data-start="375380" data-index="86">requiring to have a bunch of digits and multiple punctuation. I think, I think</li><li tabindex="0" data-start="379389" data-index="87">they're fooling themselves. I think that is excessive so I'll give you some</li><li tabindex="0" data-start="382900" data-index="88">examples on what my opinion represents good password. And I should say, I use</li><li tabindex="0" data-start="388150" data-index="89">good passwords for, the bad guys are really interested in sites that involve</li><li tabindex="0" data-start="391530" data-index="90">money. So banks, eBay, PayPal or your e-mail account. Your e-mail account is</li><li tabindex="0" data-start="398060" data-index="91">important because the bad guys can then trigger a password reset which is then</li><li tabindex="0" data-start="401800" data-index="92">sent to your e-mail account and then there might be some other repairs there but</li><li tabindex="0" data-start="404840" data-index="93">that's maybe a way for them to get to the account with money. So, those passwords</li><li tabindex="0" data-start="407840" data-index="94">are regardless important and then there might be some other, you know, blog were</li><li tabindex="0" data-start="411840" data-index="95">you want to come in or whatever and I don't put a lot of thought of using a real</li><li tabindex="0" data-start="414889" data-index="96">secured password for that so I'm conscious of passwords where I care about security</li><li tabindex="0" data-start="417900" data-index="97">versus kind of, you know, whatever throw away passwords. So here's what I'll do.</li><li tabindex="0" data-start="423620" data-index="98">Start with the word, here I use the example of mittens just some random word</li><li tabindex="0" data-start="428370" data-index="99">and I add a little misspelling. Change the letter, mess it up a little bit so it's</li><li tabindex="0" data-start="431000" data-index="100">unclear right? And then here I edit, ERX just a little random something in the</li><li tabindex="0" data-start="439320" data-index="101">middle beginning and the end or something so it's no longer, it's really not a word</li><li tabindex="0" data-start="442919" data-index="102">anymore. That's pretty good. It's important here that the ERX is only like</li><li tabindex="0" data-start="447900" data-index="103">ABC or XYZ or something that anyone else would have thought if is just really</li><li tabindex="0" data-start="452290" data-index="104">random and jumbled a few letters. So, this kind of password I found to be pret ty</li><li tabindex="0" data-start="456199" data-index="105">easy to type. If you want to get a little more fancy you can start adding some</li><li tabindex="0" data-start="460060" data-index="106">uppercase letter and maybe out a digit in there, a lot of sites required digits Or</li><li tabindex="0" data-start="463419" data-index="107">if you want to go really over the top, we can have like multiple uppercase letter</li><li tabindex="0" data-start="467580" data-index="108">and lower case and multiple digits and function letters. That's probably more</li><li tabindex="0" data-start="471000" data-index="109">complicated than as I say. So, those are pretty good passwords. There's another</li><li tabindex="0" data-start="477860" data-index="110">problem which is, instead of the bad guy guessing the password it might be that the</li><li tabindex="0" data-start="482580" data-index="111">bad guy let's say they break, I'm going to use schwab.com as my example. So what if</li><li tabindex="0" data-start="488490" data-index="112">they break in to schwab.com and they sort of get all the passwords from inside of</li><li tabindex="0" data-start="491550" data-index="113">there and there are some technical details about how might that work, It's important</li><li tabindex="0" data-start="496449" data-index="114">that for that reason it is important that you do not reuse important passwords.</li><li tabindex="0" data-start="502830" data-index="115">There is you know, if, if you did reuse it then there's this other problem even if</li><li tabindex="0" data-start="505550" data-index="116">it's hard to guess where it could kind of still enough from you but essentially from</li><li tabindex="0" data-start="508300" data-index="117">someone else. So I don't really use important passwords. This does create a</li><li tabindex="0" data-start="512490" data-index="118">problem with that is really hard to remember and I guess what I'll do is I'll</li><li tabindex="0" data-start="515299" data-index="119">just write them down. Like you have a piece of paper somewhere, you know,</li><li tabindex="0" data-start="519068" data-index="120">somewhere obscuring your house and for the important ones just write them down I find</li><li tabindex="0" data-start="522869" data-index="121">to be adequate. And to realize again, it's not that there's, there's some bunch of</li><li tabindex="0" data-start="528119" data-index="122">you know, the CIA or something is trying to break in your account and hiring people</li><li tabindex="0" data-start="532259" data-index="123">to break in your house to get the passwords. It's more, there's just this</li><li tabindex="0" data-start="535529" data-index="124">mindless bulk - and in a way just very inexpensive -</li><li tabindex="0" data-start="538550" data-index="125">operation going on just trying to take advantage of common cases so I'm not so</li><li tabindex="0" data-start="542149" data-index="126">worried about having those written down. Also if you were in the hospital or something,</li><li tabindex="0" data-start="545970" data-index="127">it might be helpful to [INAUDIBLE] to other people</li><li tabindex="0" data-start="547660" data-index="128">so that they could, they could get your</li><li style="" tabindex="0" data-start="551930" data-index="129">password. Alright. So that's our, that's our different password, password problems.</li><li tabindex="-1" style="height: 103px;" class="spacing"></li></ol>
+    </div>
+
+    <a class="nav-skip sr" id="after-transcript_i4x-Engineering-CS101-video-z223" href="#before-transcript_i4x-Engineering-CS101-video-z223">Go back to start of transcript.</a>
+
+    <div tabindex="-1" class="focus_grabber last"></div>
+  <ul class="wrapper-downloads">
+        <li class="video-sources video-download-button">
+            <a href="https://s3-us-west-1.amazonaws.com/prod-edx/CS101/Videos/security+1a.mp4">Download video</a>
+        </li>
+        <li class="video-tracks video-download-button">
+            <a href="https://class.stanford.edu/courses/Engineering/CS101/Summer2014/xblock/i4x:;_;_Engineering;_CS101;_video;_z223/handler/transcript/download">Download transcript</a>
+            <div class="a11y-menu-container">
+                <a aria-disabled="false" role="button" class="a11y-menu-button" href="#" title=".srt">.srt</a>
+                <ol role="menu" class="a11y-menu-list">
+                  <li class="a11y-menu-item active">
+		      
+                      <a aria-disabled="false" role="menuitem" class="a11y-menu-item-link" href="#srt" title="SubRip (.srt) file" data-value="srt">
+                        SubRip (.srt) file
+                      </a>
+                  </li>
+                  <li class="a11y-menu-item">
+		      
+                      <a aria-disabled="false" role="menuitem" class="a11y-menu-item-link" href="#txt" title="Text (.txt) file" data-value="txt">
+                        Text (.txt) file
+                      </a>
+                  </li>
+                </ol>
+            </div>
+        </li>
+  </ul>
+</div>
+
+</div>
+
+  </div>
+  <div class="vert vert-1" data-id="i4x://Engineering/CS101/html/z222">
+    <div class="xblock xblock-student_view xmodule_display xmodule_HtmlModule xblock-initialized" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="html" data-request-token="153fd8d06fc011e48dd3068753ad5b8a" data-runtime-version="1" data-usage-id="i4x:;_;_Engineering;_CS101;_html;_z222" data-type="HTMLModule" data-course-id="Engineering/CS101/Summer2014">
+    
+<link href="lessons_files/style-edx.css" rel="stylesheet" type="text/css">
+
+
+
+
+<h1>Computer Security</h1>
+
+
+<p>
+
+
+<!--
+
+-patched
+-phishing
+-bad password (dictionary)
+-Trojan (fake antivirus, fake dvd-ripper, celebrity photo)
+
+-Castle
+-Passive content vs. a program
+-Attacks: phishing trojan vulnerability
+-https
+-password advice
+-vulnerability
+-zombies
+
+-->
+
+</p><p>
+Computer security is a big and kind of dramatic area, and it can look scary.
+I'll talk about the most important and interesting ideas.
+Keeping safe is not that hard.
+
+</p><h2>Computer -- The Castle</h2>
+
+<ul class="slide">
+<li>The computer is like a castle with walls
+</li><li>Inside and outside are very different
+</li><li>Bad guy cannot just access files (bytes really) stored inside the computer at will
+</li><li>Bad guy will need to work at it, as we'll see
+</li></ul>
+
+<p>
+<img src="lessons_files/security-castle.png" alt="computer is like castle with walls">
+
+
+
+</p><h2>Computer Attacks</h2>
+
+<p>
+Below we'll tour through the three most common type of attack in broad 
+categories: 1. Password attack, 2. Phishing attack, 3. Malware attack - 
+here I'm using the terminology very broadly.
+
+
+</p><h2>Bad Guy Attacks - Bulk</h2>
+
+<ul class="slide">
+<li>Typically the bad guys are not crafting some attack just for you
+</li><li>They send in the millions rather crude attacks, just snaring the most clumsy victims
+</li><li>If you avoid the most common errors, you will probably be fine
+</li><li>I don't have any anti-virus software, and I have not had any problems (no Microsoft though)
+</li><li>"Spear phishing" refers to sophisticated attacks targeted at a specific person - rare
+</li></ul>
+
+<p>
+Although I'll talk about problems most of the time, don't get all 
+scared. I use the internet all day long, I don't have any anti-virus 
+software installed, and I have not had any problems. It probably helps 
+that I don't use any Microsoft software, which is a popular target.
+
+</p><h2>-1- Password Attacks</h2>
+
+<ul class="slide">
+<li>The bad guy could try to guess your password on a site
+</li><li>Try to log in again and again
+</li><li>Works if the password is common, e.g. "password" "password123"
+</li><li>Also known as "dictionary attack", try all the words in a dictionary
+</li><li>This fails mostly, but success here and there with an account with a poor password is good enough for the bad guys
+</li><li>Therefore: avoid having an obvious or commonly used password
+<br>-a word in a dictionary
+<br>-a pun or something that someone else might also use
+</li></ul>
+
+<p>
+The bad guy could try to just guess your password, attempting to log in 
+again and again, hoping to get lucky. They might know the username and 
+just guess the password, or more likely they are guessing both. There 
+are 86400 seconds in a day, and suppose your bank permits 1 login 
+attempt per second. The bad guy could just go through the list of 100000
+ common passwords ("password", "password123", "janexyz", ...) trying to 
+get lucky. This works, since they only need to guess correctly for a few
+ accounts, and they can do the attack in bulk.
+
+</p><p>
+Clearly, the bank or whatever should detect thousands of bad logins and 
+slow down or freeze the account. This can cause problems for the 
+legitimate user however, so it's a balance. One simple policy is that 
+the Bank can process login attempts at a slowish rate, such one every 
+second to prevent the bad guys from trying 100 billion different 
+passwords.
+
+</p><h2>Dictionary Attack Example</h2>
+
+<p>
+Here's a real "log file" from my codingbat.com server where it routinely
+ records what happens each day. What you see here is the attacker is 
+trying guess both the username and password on the account. It happens 
+that the username for each attempt is printed in the log file but the 
+password is not. No doubt they are trying common passwords, such as 
+"secret" "password12" etc. It's funny to me that you can see that their 
+list of usernames to try is sort of alphabetical order, and they are 
+just running through it in the most obvious way. So what you need to 
+understand is .. this sort of attack is clicking along, every second of 
+every day aimed at basically all the servers on the internet. They just 
+need to succeed with a few accounts here and there, even though they 
+fail 99.99% of the time. This is why you should not have a password 
+which is close to a dictionary word or someone's name, or  is a password
+ people often choose. The good news is .. with just 4 random letters 
+added to your password .. suddenly this dictionary attack is not going 
+to work -- there's not enough seconds in the day. Note that 49.212.7.205
+ is the IP address of the machine attacking codingbat.com. It appears to
+ be in Japan -- it's probably some person's Windows XP machine that has 
+been compromised and is now used as a "zombie" under the control of the 
+bad guy to launch more attacks. The zombie is probably running attacks 
+at many servers all at the same time, but here we just see the ones 
+directed at codingbat, about one login attempt every 3 seconds.
+
+</p><pre>...
+Mar  6 06:26:20 codingbat sshd[30924]: Failed password for invalid user alex from 49.212.7.205 port 36268 ssh2
+Mar  6 06:26:22 codingbat sshd[30926]: Failed password for invalid user alex from 49.212.7.205 port 36605 ssh2
+Mar  6 06:26:26 codingbat sshd[30928]: Failed password for invalid user alex from 49.212.7.205 port 36937 ssh2
+Mar  6 06:26:29 codingbat sshd[30930]: Failed password for invalid user adam from 49.212.7.205 port 37212 ssh2
+Mar  6 06:26:32 codingbat sshd[30932]: Failed password for invalid user fax from 49.212.7.205 port 37546 ssh2
+Mar  6 06:26:34 codingbat sshd[30934]: Failed password for invalid user fax from 49.212.7.205 port 37864 ssh2
+Mar  6 06:26:38 codingbat sshd[30936]: Failed password for invalid user demo from 49.212.7.205 port 38201 ssh2
+Mar  6 06:26:41 codingbat sshd[30938]: Failed password for invalid user demo from 49.212.7.205 port 38561 ssh2
+Mar  6 06:26:44 codingbat sshd[30940]: Failed password for invalid user amanda from 49.212.7.205 port 38911 ssh2
+Mar  6 06:26:47 codingbat sshd[30942]: Failed password for invalid user angie from 49.212.7.205 port 39244 ssh2
+Mar  6 06:26:51 codingbat sshd[30944]: Failed password for invalid user angie from 49.212.7.205 port 39552 ssh2
+...
+</pre>
+
+<h2>Bad Passwords</h2>
+
+<ul class="slide">
+<li>Do not need to be super elaborate (some sites go crazy with this)
+</li><li>List of common passwords - do not use these!
+<pre>-Common passwords-
+password
+password1
+123456789
+12345678
+1234567890
+abc123
+computer
+tigger
+1234
+qwerty
+</pre>
+</li><li>Avoid a password that thousands of others out there have also chosen
+</li></ul>
+
+<h2>Good Passwords</h2>
+
+<ul class="slide">
+<li>What I do for secure passwords, e.g a bank site
+</li><li>Start with a word, add misspelling, then add some random letters
+</li><li>Could add some digits and/or punctuation and maybe some upper case letters
+<br> mottens,erx -- fine
+<br> Mottens,9erx  -- better
+<br> MotenX,97erx  -- probably more complex than necessary
+
+</li><li>Important that the "erx" is truly nonsense, not like "xyz" that someone else on earth might tend to pick.
+
+</li><li>Other problem: what if the site itself is compromised, so the 
+bad-guy possibly gets your password that way? Therefore, do not re-use 
+your passwords across important sites like banks.
+
+</li><li>Consider writing down important passwords on a slip of paper at home. Otherwise it's hard to keep it all straight in your head.
+
+</li></ul>
+
+<p>
+You do not need a super elaborate password, but you don't want it to be 
+susceptible to a dictionary attack either. My suggestions:
+</p><ul>
+ <li>The list of common passwords contains passwords that are just a 
+word or a word plus a tiny variation, like "jane" or "secret1" or 
+"mittens123", or two words like "catmittens", so it's vital that your 
+password does not look like that.
+ </li><li>It's ok to have a word fragment, but it should also include 
+significant nonsense letters. Personally, I like starting with a word, 
+since it is easy to remember and fast to type, but then random junk 
+needs to be added in and around it.
+
+ </li><li>Some sites go crazy, requiring many upper case letters, and 
+digits, and punctuation letters. I think that's not necessary. It's 
+"security theater": adding more complexity and the appearance of action 
+but without actually adding to security.
+</li></ul>
+
+<p>
+For an important site like a bank, you should use a password different 
+from your other passwords. It should not be the case that by stealing 
+your facebook or twitter password, they now have access to your bank. I 
+write the passwords down on a piece of paper at my house in case I 
+forget. The bad guy in Russia or whatever does not have some team of 
+ninjas that's going to break into my house and get passwords off my slip
+ of paper. The attacks are  bulk, mindless affairs that work on the 
+low-hanging fruit. One technique for writing down passwords is to pick a
+ little suffix you memorize, like "x936" or whatever, and that always 
+goes on the end of your passwords. Write the passwords down, but never 
+the suffix. That way, even with the piece of paper, a bad guy still does
+ not have the passwords. Or maybe its better to just write the passwords
+ out clearly, so your family can access your email etc. if you are in 
+the hospital.
+
+</p><p>
+Email is tricky -- once they have your email password, then they may be 
+able to do a password reset and get into your account. In that sense, 
+your email password is the most important.
+
+
+
+
+</p><h2>-2- Phishing Attacks</h2>
+
+<ul class="slide">
+<li>"Phishing", i.e. the bad guy is "fishing" for you
+</li><li>Bad guy tricks you into exposing your password or whatever
+</li><li>No doubt you have received many phishing emails
+</li><li>e.g. -- phishing email, points at bad guy site, not real eBay site
+</li><li>Email might say something provocative - "fraud alert, click immediately"
+</li><li>When I type in password to either of these .. it goes to the bad guy
+</li><li>Arrow is over first link, see url at bottom of email
+</li><li>Note: not related to an actual transaction or account .. bad guys just spew these out, hoping to fool someone
+</li><li>Alternately could have a phishing web site that imitates the real eBay site
+</li><li>Bad guys emails out or in some other way distributes the url to phishing site
+</li><li>Bad guys want passwords for sites that have something to do with money
+</li></ul>
+
+<p>
+<img src="lessons_files/security-ebay-phish.png" alt="ebay phishing email" border="1">
+
+</p><p>
+Probably the most common form of attack. The email is forged to appear 
+from someone you might trust -- including logos etc -- I have gotten 
+ones which I personally found quite convincing. I had to slow down and 
+really pay attention to realize that it was a phishing attempt. It does 
+not help that ATT, Schwab, Citigroup, etc. do in fact send you email all
+ the time about your accounts.
+
+</p><p>
+Here is an example ebay phishing email sent to me. The arrow (not shown)
+ is over the first blue link, so its url appears at the bottom of the 
+message. Note that the url is not an ebay url, it's some bad guy url 
+which will attempt to fool us into typing in our username/password. Note
+ that there is no actual sale or anything that prompted this message -- 
+the bad guys just spew out millions of these emails, in the hopes that 
+one make sense to someone.
+
+</p><p>
+The most obvious valuable information the bad guy can get from you is a 
+password to a bank account or some other account that contains something
+ valuable. However as a simplification, if the bad guy can get the 
+password to your email address, then they may be able to get access to 
+most things by clicking the "I forgot my password" button on your bank 
+site. So your email password is very important.
+
+</p><h2>Fake ATM Machine -- Real World Analogy</h2>
+
+<ul class="slide">
+<li>Funny "phishing" crime in real life
+</li><li>Fake ATM in front of bank .. prints error message, but records card details and PIN for bad guy
+</li></ul>
+
+<p>
+Criminals put up a fake ATM machine made of plywood in front of a real 
+ATM, with a "under construction" sign. The victim would put their card 
+into the fake ATM and type in their PIN. Then the machine would print an
+ "out of order" message and give the card back. The bad guys in this way
+ collected all the card numbers and PINs and drained the accounts over 
+the weekend. This is a nice real-world analog of fake-site phishing.
+
+
+</p><h2>Avoiding Phishing</h2>
+
+<ul class="slide">
+<li>Don't trust urls in emails or random sites, especially when leading to a login page
+</li><li> a. Scrutinize the url as shown in your browser or email program
+<br>-Bad guy url will try to look legit, like <b>www.ebay.bad-guy.ru</b>
+</li><li> b. (more secure) Type the url in yourself -- if it claims to 
+be from ebay, type in www.ebay.com yourself in your browser. This is 
+what I tell my parents to do, as it's a simple rule.
+</li><li>Firefox etc. can do extra green hilighting of "real" site
+<br>-e.g. www.schwab.com (demo)
+</li><li>Look for <b>https</b> in the url (below)
+
+</li></ul>
+
+
+
+<h2>HTTPS</h2>
+
+<ul class="slide">
+
+<li>HTTPS - "secure" variant of HTTP to transfer the bytes of a web page over the internet
+</li><li>Does two things:
+</li><li>a. HTTPS verifies the other end, so it really is www.schwab.com or whatever
+<br>-Helps with anti-phish, but the user still needs to look at the url
+<br>-Checking that it's www.schwab.com not www.schwarb.bad-guy.ru
+</li><li>b. HTTPS encrypts all the traffic, so interception of the bytes does not work
+
+</li></ul>
+
+
+<p>
+HTTPS is the "secure" http variant, https://www.ebay.com/. In 
+particular, the server must hold a certificate which is verified 
+beforehand by an authority that the server really represents 
+www.ebay.com or whatever. You have to pay money and file some paperwork 
+to get an https certificate -- hard for a bad guy to do, although not 
+impossible. The idea with https is that the user can see the identity of
+ who they are talking to. In the browser interface, https is typically 
+accompanied by a little lock icon, and some banks etc. mention to their 
+users to look for the lock. Having users pay attention 100% of the time 
+is not a perfect security solution, but it helps.
+
+</p><h2>Encryption vs. Bad Guy Packet Eavesdropping</h2>
+
+<ul class="slide">
+
+<li>Recall from the networking section that it's easy to listen in to neighboring computers packets (ethernet broadcast)
+</li><li>"Encryption" is a way of scrambling the bytes so that even if intercepted, they are meaningless
+</li><li>HTTPS provides encryption, in addition to its url-verification feature
+</li><li>Example: this is a picture where I went to Starbucks, then typed in password to log in to www.schwab.com using their free wi-fi
+</li><li>The packets sent between my computer and schwab were broadcast so anyone in the Starbucks could see them
+</li><li>Probably several laptops there were infected with malware, and malware often specifically targets financial info (e.g. Schwab)
+</li><li>Could someone there have listened in, for example, when I typed in my password?
+</li><li>No -- HTTPS encrypted all the packets before they were broadcast
+</li><li>Note if my machine had malware on it, it could steal my password. HTTPS only takes care of the networking.
+</li></ul>
+
+<p>
+<img src="lessons_files/security-starbucks-https.jpg" alt="logging into schwab.com at Starbucks to show https">
+
+</p><p>
+When you go on to wifi and visit a web page and type something in ... 
+the packets for all that are just being broadcast in the room, so anyone
+ nearby can observe the packets, listening in (recall the 
+ethernet-packet-broadcast material from the networking section). For the
+ most part, this is harmless. In some cases, say when you are typing in a
+ credit card number, you want the communication to be <b>encrypted</b> (encoded), so that someone listening in cannot read it. The <b>https</b>
+ scheme above also does encryption, so you will notice that when you go 
+the page to type in a credit card number, the url begins with 
+"https://". On such page, all the packets are encrypted, so someone can 
+listen and see the packets, but they will appear to be random garbage. 
+The eavesdropper cannot unscramble the packets to see what's inside, or 
+forge a packet. So Https blends two security provisions -- (a) verifying
+ that it really is the www.mybank.com or whatever server on the other 
+end and (b) encrypting all the packets of the communication.
+
+
+</p><h2>-3- Malware Attacks</h2>
+
+<p>This is a big category, where the bad guy tricks the victim into 
+running bad software ("malware") on the victims computer. I'm lumping 
+viruses, worms, and trojans all into this category.
+
+</p><h2>How Do I Feel About This File?</h2>
+
+
+<ul class="slide">
+ <li>Suppose a bad guy emails you the following sort of file:
+
+ </li><li>A plain .TXT file, which you open and read on your computer
+ </li><li>A .JPG file, which you then open and look at on your computer
+ </li><li>A program .EXE file -- a program -- which you copy on to your 
+computer and run (.EXE is just a windows convention, but I'll use it 
+here to indicate a program)
+ </li><li>A .DOC file which you then open and read on your computer
+
+</li></ul>
+
+<h2>Passive Content = Safe, Program = Unsafe</h2>
+
+<ul class="slide">
+<li>If the bad guy gets you to run bad guy authored code on your computer, the computer is compromised, the bad guy wins
+</li><li>The code can <b>take actions</b> and it's inside the computer
+</li><li><b>Key:</b> if bad guy authored code is downloaded to the computer and runs .. the bad guys has won
+</li><li>Variations below will all center on this downloaded ".EXE" case
+</li><li>So we trust passive content (.TXT .JPG) but not active programs (.DOC .EXE).
+</li><li>Unfortunately, many seemingly passive formats, such as .DOC, can have "program" type qualities in them as an advanced feature
+</li><li>e.g. .DOC can be unsafe because of Microsoft Visual Basic 
+macros embedded ... this used to be a huge source of problems (search 
+for "macro virus")
+</li><li>"Malware" - generic term for program that does something bad
+</li></ul>
+
+<p>
+The last, .exe case is the main risk here, although all of the above 
+scenarios could result in problems. If code written by the bad guy, a 
+.exe, runs on your computer, the bad guy now in essence has control and 
+access to the data on your computer.
+
+</p><p>
+Suppose the bad guy is sitting at the keyboard of your unlocked 
+computer, obviously they can do whatever they want with your data. The 
+.exe case is very similar -- the code in the .exe could do what the bad 
+guy wants -- look for a particular file, email it off the machine, etc. 
+Most of the "attacks" listed below in essence try to re-create the .exe 
+case, and the defenses center on preventing the .exe case.
+
+</p><p>
+"Malware" is the general term for a program written by the bad guy to do
+ bad things to your machine - break in to the machine, steal passwords, 
+send spam, etc.
+
+</p><h2>Bad Guy Malware .EXE Techniques</h2>
+
+
+<h2>Malware 1 - Trojan</h2>
+
+<ul class="slide">
+<li>Trojan is malware disguised as something else
+</li><li>So the user downloads it or accesses it, not aware that it will do something bad
+</li><li>e.g. JustinBieberJPEG.exe
+</li><li>e.g. SuperAntiVirus.exe -- this is actually a common Trojan ruse!
+</li><li>Try to make it look like harmless content, not a program
+</li><li>Claim to be a program that does something many people want, but really it's malware
+</li><li>Operating systems may have helpful warning "this is a program you downloaded, do you want to run it?"
+</li><li>Therefore:
+</li><li>Don't run programs from random sources (google it first, see what people say)
+</li><li>If something is from a well known domain and has lots of downloads, I figure someone would have flagged it if it was malware
+</li></ul>
+
+<p>
+A "trojan" is a malware disguised as something else, like 
+"awesome-cursors.exe" or "fun-game.exe" or "JustinBeiber.JPEG.exe" 
+(Windows is vulnerable to extensions other than .exe, it's just used for
+ the examples here). The term refers to the Trojan Horse story from 
+antiquity. If the user can be tricked into double clicking the trojan, 
+running it, then the bad guys have won. The https is no defense. On Mac 
+OS X, heuristics have been added where it puts up a dialog "This was 
+just downloaded and it is a program; are you sure you want to run it?"
+
+</p><h2>Malware 2 - Vulnerability</h2>
+
+<ul class="slide">
+<li>Suppose there is a <b>bug</b> in the Flash animation display program
+</li><li>When fed certain pathologic animation bytes, the program breaks and gives access to the machine
+</li><li>So the bad guy puts a malicious Flash animation, and then sends links to it on sites or in spam
+</li><li>Just visiting the page with the bad content is enough to compromise the machine if it is vulnerable
+</li><li>This is probably the most scary case, as the user does very little
+</li><li>Solution:
+</li><li>Keep web-facing software up to date
+</li><li>All browsers now have strong auto-update channels, so by default the right thing tends to happen
+</li><li>Aside: this is also why having a proprietary format like Flash 
+be a key part of the internet is maybe not a good architecture. People 
+were very dependent on Adobe to fix the software very quickly, and 
+Adobe's record was very uneven.
+</li></ul>
+
+<p>
+Suppose there is an engineering flaw in Firefox or the Flash player or 
+some other  software on your machine, such that if it sees a particular 
+sequence of bytes as input, there is bug that allows a takeover of the 
+machine. This is called a "vulnerability", and it is one of the scary 
+cases. If the user browses over to a web site this is hosting the 
+"attack" content and their browser is vulnerable, then the bad guy can 
+get it just from that. The bad guy can make the web site appear 
+attractive, post links on reddit or whatever to try to drive traffic to 
+the site. This attack is scary because it does not require the user to 
+do anything especially foolish.
+
+</p><p>
+Such vulnerabilities in Flash and IE used to be quite common. However, 
+the engineering culture seems to be catching up, and this case is 
+becoming more rare. The most important step is being sure to run the 
+most up to date, current version of your browser and any plugins such as
+ Flash. Firefox et al have switched to make programs auto-check for new 
+versions, so the user does not need to do much to have the most recent 
+version. Often a vulnerability is fixed, and months later attackers 
+start using it on sites, but they can still succeed with users using old
+ versions.
+
+
+</p><h2>Safety Recap</h2>
+
+
+<ul class="slide">
+<li>1. Password attack
+<br>-Don't use a bad password for an important site (e.g. bank)
+<br>-Don't re-use passwords across important sites
+</li><li>2. Phishing Attack
+<br>-Proceed carefully with content from email, or with provocative titles
+<br>-Look at the browser url-area when typing in password
+<br>-Or just type in "www.schwab.com" yourself in the browser instead of clicking in the email
+</li><li>3. Malware Attack
+<br>-Trojan - be very wary of downloading and running code (google the name or source)
+<br>-Vulnerability case - keep internet-facing software on auto-update to stay at the latest
+</li></ul>
+
+<p>
+Let's stay safe out there!
+
+
+
+
+
+
+</p></div>
+
+  </div>
+</div>
+
+</div>
+
+  </div>
+
+  <nav class="sequence-bottom">
+    <ul aria-label="Section Navigation" class="sequence-nav-buttons">
+      <li class="prev"><a aria-hidden="true" class="disabled" role="button" href="#">Previous</a></li>
+      <li class="next"><a aria-hidden="true" class="disabled" role="button" href="#">Next</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+
+<script type="text/javascript">
+  var sequenceNav;
+  $(document).ready(function() {
+    sequenceNav = new SequenceNav($('.sequence-nav'));
+  });
+</script>
+
+</div>
+
+    </section>
+  </div>
+</div>
+
+
+<div id="accessibile-confirm-modal" class="modal" aria-hidden="true">
+  <div class="inner-wrapper" role="dialog" aria-labelledby="accessibile-confirm-title">
+    <button class="close-modal">
+      <i class="icon-remove"></i>
+      <span class="sr">
+        Close
+      </span>
+    </button>
+
+    <header>
+      <h2 id="accessibile-confirm-title">
+          Confirm
+        <span class="sr">,
+          modal open
+        </span>
+      </h2>
+    </header>
+    <div role="dialogalert" class="status message" tabindex="-1">
+        <p class="message-title"></p>
+    </div>
+    <hr aria-hidden="true">
+    <div class="actions">
+        <button class="dismiss ok-button">OK</button>
+        <button class="dismiss cancel-button" data-dismiss="leanModal">Cancel</button>
+    </div>
+  </div>
+  <a href="#accessibile-confirm-modal" rel="leanModal" id="confirm_open_button" style="display:none">open</a>
+</div>
+
+<script type="text/javascript">
+var accessible_confirm = function(message, callback) {
+    $("#accessibile-confirm-modal .cancel-button").click(function(){
+        $("#accessibile-confirm-modal .close-modal").click();
+    });
+    $("#accessibile-confirm-modal .ok-button").click(function(){
+        $("#accessibile-confirm-modal .close-modal").click();
+        callback();
+    });
+
+    accessible_modal("#accessibile-confirm-modal #confirm_open_button", "#accessibile-confirm-modal .close-modal", "#accessibile-confirm-modal", ".content-wrapper");
+    $("#accessibile-confirm-modal #confirm_open_button").click();
+    $("#accessibile-confirm-modal .message-title").html(message);
+};
+</script>
+
+
+    
+  </div>
+
+  
+<div class="wrapper-footer">
+  <footer>
+    <div class="colophon">
+      <nav class="nav-colophon">
+        <ol>
+          <li><a href="https://class.stanford.edu/tos">Terms of Service <br>(Revised 06/14/14)</a></li>
+          <li><a href="https://class.stanford.edu/tos#privacy">Privacy Policy <br>(Revised 06/14/14)</a></li>
+          <li><a href="https://class.stanford.edu/tos#honor">Honor Code</a></li>
+          <li><a href="https://class.stanford.edu/tos#copyright">Copyright</a></li>
+          <li><a href="https://class.stanford.edu/about#careers">Careers</a></li>
+          <li><a href="https://class.stanford.edu/about#contact">Contact</a></li>
+          <li><a href="https://stanfordonline.zendesk.com/hc">Help</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="references">
+      <a id="stanford-footer-edx-image" href="http://openedx.org/">
+        <span class="sr">Powered by Open edX</span>
+      </a>
+    </div>
+  </footer>
+</div>
+
+<div id="su-footer">
+  <div class="su-container">
+    <div class="su-row">
+      <div id="su-footer-logo" class="span2">
+        <a href="http://www.stanford.edu/">
+          <img src="lessons_files/footer-stanford-logo2x.png" alt="Stanford University" height="49" width="105">
+        </a>
+      </div>
+      <div id="su-footer-text" class="span10">
+        <ul>
+          <li class="home"><a href="http://www.stanford.edu/">SU Home</a></li>
+          <li class="maps alt"><a href="http://visit.stanford.edu/plan/maps.html">Maps &amp; Directions</a></li>
+          <li class="search-stanford"><a href="http://www.stanford.edu/search/">Search Stanford</a></li>
+          <li class="terms alt"><a href="http://www.stanford.edu/site/terms.html">Terms of Use</a></li>
+          <li class="copyright"><a href="http://www.stanford.edu/site/copyright.html">Copyright Complaints</a></li>
+        </ul>
+        <div class="clear"></div>
+        <p class="copyright vcard">© <span class="fn org">Stanford University</span>, <span class="adr"> <span class="locality">Stanford</span>, <span class="region">California</span> <span class="postal-code">94305</span> </span></p>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+  </div>
+</div>
+
+
+  <script>window.baseUrl = "/static/";</script>
+  
+    <script type="text/javascript" src="lessons_files/lms-application.js" charset="utf-8"></script>
+
+
+  
+    <script type="text/javascript" src="lessons_files/lms-modules.js" charset="utf-8"></script>
+
+
+
+  
+  <script type="text/javascript" src="lessons_files/jquery_002.js"></script>
+  <script type="text/javascript" src="lessons_files/jquery_003.js"></script>
+
+  <script type="text/javascript" src="lessons_files/codemirror-compressed.js"></script>
+
+  
+    <script type="text/javascript" src="lessons_files/lms-courseware.js" charset="utf-8"></script>
+
+
+  
+    <script type="text/javascript" src="lessons_files/discussion.js" charset="utf-8"></script>
+
+
+
+  
+
+
+
+<script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="lessons_files/MathJax.js"></script>
+
+<script type="text/template" id="_user_profile">
+
+<h2>Active Threads</h2>
+<section class="discussion">
+    {{#threads}}
+        <article class="discussion-thread" id="thread_{{id}}"/>
+    {{/threads}}
+</section>
+<section class="pagination"/>
+</script>
+<script type="text/template" id="_profile_thread">
+
+<article class="discussion-article" data-id="{{id}}">
+    <div class="discussion-post">
+        <header>
+            <h3>{{title}}</h3>
+            <p class="posted-details">                
+                {{#user}}
+                <a href="{{user_url}}" class="username">{{username}}</a>
+                {{/user}}
+                {{^user}}
+                anonymous
+                {{/user}}
+
+                <span class="timeago" title="{{created_at}}">{{created_at}}</span>
+                <span class="post-status-closed top-post-status" style="display: none">
+                    &bull; This thread is closed.
+                </span>
+            </p>
+        </header>
+        <div class="post-body">{{{abbreviatedBody}}}</div>
+    </div>
+    <div class="post-tools">
+        <a href="{{permalink}}">View discussion</a>
+    </div>
+
+</article>
+</script>
+<script type="text/template" id="_pagination">
+
+<nav class="discussion-{{discussiontype}}-paginator discussion-paginator">
+    <ol>
+        {{#previous}}
+        <li><a class="discussion-pagination" href="{{url}}" data-page-number="{{number}}">&lt; Previous</a></li>
+        {{/previous}}
+        {{#first}}
+        <li><a class="discussion-pagination" href="{{url}}" data-page-number="1">1</a></li>
+        {{/first}}
+        {{#leftdots}}
+        <li>…</li>
+        {{/leftdots}}
+
+        {{#lowPages}}
+        <li><a class="discussion-pagination" href="{{url}}" data-page-number="{{number}}">{{number}}</a></li>
+        {{/lowPages}}
+        <li class="current-page"><span>{{page}}</span></li>
+        {{#highPages}}
+        <li><a class="discussion-pagination" href="{{url}}" data-page-number="{{number}}">{{number}}</a></li>
+        {{/highPages}}
+
+        {{#rightdots}}
+        <li>…</li>
+        {{/rightdots}}
+        {{#last}}
+        <li><a class="discussion-pagination" href="{{url}}" data-page-number="{{number}}">{{number}}</a></li>
+        {{/last}}
+        {{#next}}
+        <li><a class="discussion-pagination" href="{{url}}" data-page-number="{{number}}">Next &gt;</a></li>
+        {{/next}}
+    </ol>
+</nav>
+
+</script>
+<script type="text/template" id="_inline_discussion">
+
+<section class="discussion" data-discussion-id="{{discussionId}}">
+    <article class="new-post-article"></article>
+
+    <section class="threads">
+        {{#threads}}
+            <article class="discussion-thread" id="thread_{{id}}">
+            </article>
+        {{/threads}}
+    </section>
+
+    <section class="pagination">
+    </section>
+</section>
+</script>
+
+
+  <script type="text/javascript">
+    var $$course_id = "Engineering/CS101/Summer2014";
+
+    $(function(){
+        $(".ui-accordion-header a, .ui-accordion-content .subtitle").each(function() {
+          var elemText = $(this).text().replace(/^\s+|\s+$/g,''); // Strip leading and trailing whitespace
+          var wordArray = elemText.split(" ");
+          var finalTitle = "";
+          if (wordArray.length > 0) {
+            for (i=0;i<=wordArray.length-1;i++) {
+              finalTitle += wordArray[i];
+              if (i == (wordArray.length-2)) {
+                finalTitle += "&nbsp;";
+              } else if (i == (wordArray.length-1)) {
+                // Do nothing
+              } else {
+                finalTitle += " ";
+              }
+            }
+          }
+          $(this).html(finalTitle);
+        });
+      });
+  </script>
+
+
+
+
+
+
+
+  <!-- dummy segment.io -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    pageview: function() { return; }
+  };
+</script>
+<!-- end dummy segment.io -->
+
+
+
+
+
+<div class="annotator-notice"></div><div style="display: none; opacity: 0;" class="tooltip"></div><div id="lean_overlay"></div><div id="reader-feedback" class="sr" style="display:none" aria-hidden="false" aria-atomic="true" aria-live="assertive"></div><div style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px none; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: 'MathJax_Size1',sans-serif;" id="MathJax_Font_Test"></div></body></html>

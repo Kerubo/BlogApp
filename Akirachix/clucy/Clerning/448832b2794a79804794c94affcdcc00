@@ -1,0 +1,55 @@
+<?php $__env->startSection('content'); ?>
+<!-- create form -->
+
+<?php echo Form::open(array('route' => 'users.store')); ?>
+<div class="form-group">
+<?php echo Form::label('Names'); ?>
+<?php echo Form::text('names', null,array('class' => 'form-control')); ?>
+</div>
+
+<div class="form-group">
+<?php echo Form::label('Date Of Birth'); ?>
+<?php echo Form::selectRange('dob["day"]'),1,31; ?>
+<?php echo Form::selectRange('dob["month"]'); ?>
+<?php echo Form::selectRange('dob["year"]',1900,1996); ?>
+</div>
+
+<div class="form-group">
+<?php echo Form::label('Gender'); ?>
+<div class="radio">
+<label>
+	
+<?php echo Form::radio('Gender','male'; ?></label>
+</div>
+<div class="radio">
+<label><?php echo Form::radio('Gender','female' , true; ?></label>
+</div>
+
+</div>
+
+<div class="form-group">
+<?php echo Form::label('Marital Status'); ?>
+<?php echo Form::select('marital status', $marital_status ,null,array('class' => 'form-control')); ?>
+</div>
+
+<div class="form-group">
+<?php echo Form::label('Phone number '); ?>
+<?php echo Form::text('phone', null,array('class' => 'form-'control)); ?>
+</div>
+
+<div class="form-group">
+<?php echo Form::label('Country'); ?>
+<?php echo Form::text('country', null,array('class' => 'form-control')); ?>
+</div>
+
+<div class="form-group">
+<?php echo Form::label('submit'); ?>
+<?php echo Form::submit('create profile', array('class' => 'btn btn-primary')); ?>
+</div>
+<div class="form-group">
+<?php echo Form::close(); ?>
+</div>
+<?php $__env->stopSection(); ?>
+    
+
+<?php echo $__env->make('layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

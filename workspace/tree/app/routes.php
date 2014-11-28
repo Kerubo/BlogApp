@@ -13,11 +13,37 @@
 //the website routes
 Route::get('/', function()
 {
-	return View::make('ebotics.home');
+	return View::make('pages.index');
 });
 Route::get('/about', function()
 {
+	return View::make('pages.about');
+});
+Route::get('/contact', function()
+{
+	return View::make('pages.contact');
+});
+
+Route::get('/team', function()
+{
+	return View::make('pages.team');
+});
+Route::get('/product', function()
+{
+	return View::make('pages.product');
+});
+Route::get('/home', function()
+{
+	return View::make('ebotics.home');
+});
+Route::get('/serve', function()
+{
 	return View::make('ebotics.about');
+});
+
+Route::get('/quizy', function()
+{
+	return View::make('ebotics.quizy');
 });
 
 Route::get('/advertisments', function()
@@ -28,7 +54,7 @@ Route::get('/adverts', function()
 {
 	return View::make('ebotics.adverts');
 });
-Route::get('/team', function()
+Route::get('/teams', function()
 {
 	return View::make('ebotics.team');
 });
@@ -36,7 +62,7 @@ Route::get('/products', function()
 {
 	return View::make('ebotics.products');
 });
-Route::get('/contact', function()
+Route::get('/contacts', function()
 {
 	return View::make('ebotics.contact');
 });
@@ -45,6 +71,22 @@ Route::get('/index', function()
 {
 	return View::make('ebotics.index');
 });
+Route::get('/quiz', function()
+{
+	return View::make('ebotics.quiz');
+});
+
+Route::get('/memory', function()
+{
+	return View::make('ebotics.memory');
+});
+Route::get('/creative', function()
+{
+	return View::make('ebotics.creative');
+});
+
+
+// 
 // Route for sign up page
 Route::get('signup', 'AuthController@signUpPage');
 Route::post('signup', 'AuthController@signup');

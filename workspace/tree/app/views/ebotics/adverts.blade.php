@@ -19,7 +19,7 @@
 			<h4>Create an account</h4>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magnaipsum dolor sit amet, consectetur adipisicing e aliqua. </p>
-			<a class="button" href="#">Create an Account</a>
+			<a class="button" href="home/index">Create an Account</a>
 
 		</div>
 		<!--end : info panel-->

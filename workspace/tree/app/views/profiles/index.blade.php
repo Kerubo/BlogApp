@@ -1,35 +1,38 @@
 @extends('master')
  
-
-@section('title')
  
 @section('content')
+ {{HTML::style('assets/css/main.css')}}
+ <div id="wrapper">
+<div id="content">
+<br><br><br><br>
+<div id="slidar">
 
 
 
-
-<div  style="border:5px solid #ff7400;width:60%;height:600px;;float:left;margin-left:50px;">
-<div  style="backround-color:#cff;">
-<h2>E-botics Kenya</h2>
-<div class="pull-right">
- <a href="/posts" class=" btn btn-default" style="background:#fff;colour:ff7400;">READ SOMETHING EXCITING</a>
+<h5> Hello<!---<img src="{{Auth::user()->gravatar()}}" alt="" />-->
+ <i class="fa fa-user"></i>  {{ Auth::user()->profile->firstname }} 
+<br> Welcome to E-botics cool kids and explore the fun  </h5>
 
 
-<p><a href="{{action('AuthController@logout')}}">Logout</a></p>
+
+<div class="pull-right" >
+<a href="/serve" class=" btn btn-primary" style="colour:#106DA0;">ROBOTICS</a>
+<a href="/quiz" class=" btn btn-primary" style="colour:106DA0;">ENTREPRENUERSHIP</a>
+ 
+
+
+<a href="{{action('AuthController@logout')}}">Logout</a>
+
 </div>
-<p>
-    <h4> Hello <i class="fa fa-user"></i>  {{ Auth::user()->profile->firstname }}<br> Welcome to E-bortics Learning centre   </h4>
-</p>
-<p>
+
 <!---<img src="{{Auth::user()->gravatar()}}" alt="" />-->
 
-</p>
 
-</div>
-</div>
-<h4>Who Else Uses E-botics</h4>
+
+
 <div class="module-search module" style="float:right;">
-    <h2 class="module-header"></h2>
+   
     <div class="module-content" >
         <form id="search-blog" method="get"
           action="http://www.robotbooks.com/search">
@@ -38,8 +41,15 @@
         </form>
     </div>
 </div>
-<br>
+</div>
 
+</div>
+</div>
+</div>
+<div></div>
+
+</div>
+<!--
 <div  style="backround:#fff;border:5px solid #ff7400;width:30%;float:left;margin-left:20px;">
 
 <table>
@@ -67,9 +77,5 @@
         @endforeach
     </tbody>
 </table>
-</div>
-
-</body>
-
-
+</div>-->
 @stop

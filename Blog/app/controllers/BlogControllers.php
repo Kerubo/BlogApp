@@ -1,5 +1,5 @@
 <?php
-//file: app/controllers/BlogController.php
+
  
 class BlogController extends BaseController {
  
@@ -12,9 +12,10 @@ $this->beforeFilter('auth',['only' => ['getLogout']]);
 public function getIndex()
 {
 $posts = Post::orderBy('id','desc')->paginate(10);
-// For Laravel 4.2 use getFactory() instead of getEnvironment() method.
+
+// this is the get form        method
 $posts->getEnvironment()->setViewName('pagination::simple');
-$this->layout->title = 'Home Page | Laravel 4 Blog';
+$this->layout->title = 'Home Page | Welcome to our very own blog';
 $this->layout->main = View::make('home')->nest('content','index',compact('name'));
 }
  
@@ -24,10 +25,11 @@ $searchTerm = Input::get('s');
 $posts = Post::whereRaw('match(title,content) against(? in boolean mode)',[$searchTerm])
 ->paginate(10);
 
-$posts->getEnvironment()->setViewName('pagination::slider');
+$posts->getPosts()->setViewName('pagination::slider');
 $posts->appends(['s'=>$searchTerm]);
 $this->layout->with('title','Search: '.$searchTerm);
 $this->layout->main = View::make('home')
+
 ->nest('content','index',($posts->isEmpty()) ? ['notFound' => true ] : compact('name'));
 }
  
@@ -44,14 +46,16 @@ $credentials = [
 'password'=>Input::get('password')
 ];
 $rules = [
-'username' => 'required',
+'username' => 'required |unique ',
 'password'=>'required'
 ];
 $validator = Validator::make($credentials,$rules);
 if($validator->passes())
 {
 if(Auth::attempt($credentials))
+
 return Redirect::to('admin/dash-board');
+
 return Redirect::back()->withInput()->with('failure','username or password is invalid!');
 }
 else
@@ -62,8 +66,10 @@ return Redirect::back()->withErrors($validator)->withInput();
  
 public function getLogout()
 {
+	
 Auth::logout();
 return Redirect::to('/');
+
 
 }
 

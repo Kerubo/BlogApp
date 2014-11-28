@@ -1,9 +1,12 @@
-@extends('layouts.master')
- 
+@extends('master')
 @section('title') Users @stop
  
 @section('content')
- <body background="http://www.sonicavenger.com/uploaded_images/ClearBlueSky-741012.jpg">
+
+ {{HTML::style('assets/css/main.css')}}
+ <br><br><br>
+ <div id="wrapper">
+ <div id="content">
 <div class="col-lg-10 col-lg-offset-1">
  
     <h1 style="color:#0072BB;"><i class="fa fa-users"></i> User Administration <a href="/logout" class="btn btn-default pull-right">Logout</a></h1>
@@ -44,5 +47,6 @@
     <a href="/user/create" class="btn btn-success">Add User</a>
     <a href="{{route('todos.create')}}" class="btn btn-default">update info</a>
 </div>
- </body>
+</div>
+</div>
 @stop

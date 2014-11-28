@@ -2,9 +2,12 @@
 @section('title') Login @stop
  
 @section('content')
- 
-<div class='col-lg-4 col-lg-offset-4' style="backround:#fff;border:5px solid #ff7400;">
-<h1 color:#0072BB;><i class="fa fa-sign-in"></i> Sign Up Here</h1>
+  {{HTML::style('assets/css/main.css')}}
+ <div id="wrapper">
+<br><br><br><br>
+<div id="content">
+
+<h2 color:#0072BB;><i class="fa fa-sign-in"></i> Sign Up Here</h2>
 
 {{Form::open(['action' => 'AuthController@signup'])}}
 <div class='form-group'>
@@ -18,10 +21,11 @@
    </div>
     <div class='form-group'>
         {{ Form::submit('Create Account', ['class' => 'btn btn-primary']) }}
-    </div>
+   
 {{Form::close()}}
 
 <!-- Errors here -->
 @include('layouts.errors')
-
+</div>
+</div>
 @stop

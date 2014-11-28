@@ -1,0 +1,186 @@
+#wrapper{
+        padding:10px;
+        background-color: #38595E;
+        margin:60px auto;
+        width: 1080px;
+       min-height: 1700px;}
+
+/*The Header*/
+#header{ padding: 4px;
+        position: relative;
+        margin-left: 40px;
+        background-color: #2CC0B3;
+        margin:10px;
+        width: 1040px;
+        height: 150px;
+        margin-left: 15px;
+     }
+
+
+#logo{width: 1000px;
+      height: 100px;
+     padding: 4px;
+     margin-left: 10px;
+     background-color:#38595E;
+     margin-left: 18px;}
+     
+     
+#ogo{width: 650px;
+      height: 90px;
+     padding: 4px;
+     background-color: #2CC0B3 ;
+     float: left;}
+     
+ #log{width: 300px;
+      height: 90px;
+     padding: 4px;
+     background-color:  #2CC0B3;
+     float: left;
+     
+    margin-right: 30px;}    
+   h1{Color: #2D52EA;text-align: center;}
+   small{color: #545454;}
+     
+#head{width: 1000px;
+     padding: 4px;
+     margin:10px;
+     height: 20px;
+     margin-left: 18px;
+     background-color: #FF6600;}
+     
+     nav{width: 800px;
+         background-color: #000;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;}
+
+nav ul{margin: 0;
+       padding: 0;}
+
+nav li{list-style: none;
+       font-size: 14px;
+       float: left;
+       text-align: center;
+       padding-left: 50px;}
+
+nav li a{display: inline;
+         margin-right: 25px;
+         text-decoration: none;
+         width: 9em;
+         padding: 8px;
+         font-style:Park Avenue;
+         color: #ccc;
+         line-height: 1.50em;}
+
+nav li:hover > a{color: white;}
+
+
+nav li ul{display: none;
+          text-align: left;
+          margin: 0;
+          padding: 0 1em;
+          background: none;}
+
+nav li:hover ul, nav li.hover ul{display: block;
+                                 position: absolute;
+                                 padding: 0;}
+
+nav li:hover li, nav li.hover li{float: none;}
+
+nav li:hover li a, nav li.hover li a{width: 9em;
+                                     margin-top: 0;}
+
+nav li a:hover{background: none;
+               color:  #2D52EA;}
+
+nav:after{visibility: hidden;
+          display: block;
+          font-size: 0px;
+          content: "";
+          clear: both;
+          height: 0px;}
+          
+    /*The Contact*/
+          #content{ padding: 4px;
+        position: relative;
+        margin-left: 40px;
+        background-color:#CCC;
+        margin:10px;
+        width: 1040px;
+        height: 1280px;
+        margin-left: 15px;
+     }
+#slider{width: 1000px;
+      height: 500px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-image: url(../images/watoto.jpg);
+     margin-left: 18px;}
+     
+     #container{width: 1000px;
+      height: 700px;
+     padding: 4px;
+     margin-left: 10px;
+     background-color: #545454;
+     margin-left: 18px;}
+     
+     
+     #slide{width: 310px;
+      height: 650px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #2D52EA;
+      float:left;}
+     
+     #slid{width: 310px;
+      height: 650px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color:  #2D52EA;
+   float:left;}
+    
+     #sli{width: 310px;
+      height: 650px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #2D52EA;
+   float:left;}
+     /*the footer*/
+     #footer{ padding: 4px;
+        position: relative;
+        margin-left: 40px;
+        background-color:#CCC;
+        margin:10px;
+        width: 1040px;
+        height: 300px;
+        margin-left: 15px;
+     }
+     #li{width: 320px;
+      height: 250px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #2D52EA;
+   float:left;}
+
+#lid{width: 320px;
+      height: 250px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color:  #2D52EA;
+   float:left;}
+
+  #lide{width: 320px;
+
+      height: 250px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #2D52EA;
+   float:left;}
+

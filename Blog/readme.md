@@ -1,4 +1,6 @@
 ####Laravel PHP Framework
+the whole project guidelines with 
+https://www.infiniteskills.com/training/learning-php-mysql.html?affid=bf567 #800080 
 ## The first  blog
 
 ####

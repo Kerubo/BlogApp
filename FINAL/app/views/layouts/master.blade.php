@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/cs\
 s/bootstrap.min.css">
 
-<link rel="stylesheet" href=" /asset/css/style.css">
+<link rel=" stylesheet"  type="text/css"   href="assets/css/main.css">
  <link rel="stylesheet" href="/assets/css/layout.css" />
 </head>
 

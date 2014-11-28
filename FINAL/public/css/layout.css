@@ -1,42 +1,46 @@
-body {
-  margin      : 0 auto;
-  padding     : 0 0 50px 0;
-  font-family : "Helvetica", "Arial";
-  font-size   : 14px;
-  line-height : 18px;
-  cursor      : default;
-}
- 
+body{background-color:#016DA0;
+    border-radius: 2px;
+ }
 a {
-  color : #ef7c61;
+  color : #016DA0;
 }
- 
+#wrap{width: 800px;
+     margin:0 auto;
+    padding:0px;
+    border-radius: 2px;
+   min-height:800px;
+   border:10px solid #F05A28;
+  background-color: #fff;} 
 .container {
-  width    : 960px;
+  width    : 800px;
+  height:800px;
+  padding: 0px:
+  ;
+  margin: 0 auto;
   position : relative;
   margin   : 0 auto;
 }
  
 .header, .footer {
-  background  : #016DA0;
-  line-height : 50px;
-  height      : 50px;
+  
+  
+ 
   width       : 100%;
+ 
   color       : #F05A28;
 }
  
-.header h1, .header a {
-  display : inline-block;
-}
- 
-.header h1 {
-  margin      : 0;
-  font-weight : normal;
+
+.header  {
+  
+  height      : 80px;
+   border-bottom: 10px #F05A28 solid;
 }
  
 .footer {
-  position : absolute;
-  bottom : 0;
+   height      : 50px;
+ 
+   border-top: 10px #F05A28 solid;
 }
  
 .content {
@@ -48,8 +52,225 @@ label, input {
   float  : left;
   margin : 5px 0;
 }
-
+table{background-color: #fff;
+text-align: center;}
 table tr td{border-top: 2px;border: 4px solid #000;}
 table tr:nth-child(2n){
-   background-color:  #ccc;
+   background-color:  #016DA0;
  }
+.cont{padding: 25px 0;
+margin: 0 auto;
+float: right;
+width:500px;
+height: 550px;
+padding-left: 10px;
+border-left: 2px solid  #016DA0;}
+.tent{
+margin: 0 auto;
+float: left;
+width:500px;
+height: 540px;
+
+
+img{width: 700px;
+height:540px;}
+
+ a{text-decoration: none;
+           }
+ .fa { font-size: 1.2em; opacity: 0.8; }
+ h3{font-size:20px;
+  font-family:Aril Narrow;
+  background-color: #016DA0;
+  
+  color:#F05A28;}
+  body {background-image: url(http://2.bp.blogspot.com/-XY5fcP0cZKM/UFZIlqLZSdI/AAAAAAAABm0/ffsA6FVp-Oo/s1600/Cute+Robot+Wallpaper+%286%29.jpg);}
+  #wrapper{
+      
+  
+      
+        margin:10px auto;
+        width: 1080px;
+       min-height: 1700px;}
+
+/*The Header*/
+#header{ padding: 4px;
+        position: relative;
+        margin-left: 40px;
+        background-color: #fff;
+        margin:10px;
+        width: 1040px;
+        height: 150px;
+        margin-left: 15px;
+     }
+
+
+#logo{width: 1000px;
+      height: 100px;
+     padding: 4px;
+     margin-left: 10px;
+     background-color:#016DA0;
+     margin-left: 18px;}
+     
+     
+#ogo{width: 650px;
+      height: 90px;
+     padding: 4px;
+     background-color: #fff ;
+     float: left;}
+     
+ #log{width: 300px;
+      height: 90px;
+     padding: 4px;
+     background-color:  #fff;
+     float: left;
+     
+    margin-right: 30px;}    
+   h1{Color: #2D52EA;text-align: center;}
+   small{color: #545454;}
+     
+#head{width: 1000px;
+     padding: 4px;
+     margin:10px;
+     height: 20px;
+     margin-left: 18px;
+     background-color: #016DA0;}
+     
+     nav{width: 800px;
+         background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;}
+
+nav ul{margin: 0;
+       padding: 0;}
+
+nav li{list-style: none;
+       font-size: 14px;
+       float: left;
+       text-align: center;
+       padding-left: 50px;}
+
+nav li a{display: inline;
+         margin-right: 25px;
+         text-decoration: none;
+         width: 9em;
+         padding: 8px;
+         font-style:Park Avenue;
+         color: #ccc;
+         line-height: 1.50em;}
+
+nav li:hover > a{color: white;}
+
+
+nav li ul{display: none;
+          text-align: left;
+          margin: 0;
+          padding: 0 1em;
+          background: none;}
+
+nav li:hover ul, nav li.hover ul{display: block;
+                                 position: absolute;
+                                 padding: 0;}
+
+nav li:hover li, nav li.hover li{float: none;}
+
+nav li:hover li a, nav li.hover li a{width: 9em;
+                                     margin-top: 0;}
+
+nav li a:hover{background: none;
+               color:  #016DA0;}
+
+nav:after{visibility: hidden;
+          display: block;
+          font-size: 0px;
+          content: "";
+          clear: both;
+          height: 0px;}
+          
+    /*The Contact*/
+          #content{ padding: 4px;
+        position: relative;
+        margin-left: 40px;
+        background-color:#fff;
+        margin:10px;
+        width: 1040px;
+        height: 1280px;
+        margin-left: 15px;
+     }
+#slider{width: 1000px;
+      height: 700px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-image: url(../images/watoto.jpg);
+     margin-left: 18px;}
+     
+     #container{width: 1000px;
+      height: 500px;
+     padding: 4px;
+     margin-left: 10px;
+     background-color: #016DA0;
+     margin-left: 18px;}
+     
+     
+     #slide{width: 310px;
+      height: 450px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #fff;
+      float:left;}
+     
+     #slid{width: 310px;
+      height: 450px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color:  #fff;
+   float:left;}
+    
+     #sli{width: 310px;
+      height: 50px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #fff;
+   float:left;}
+     /*the footer*/
+     #footer{ padding: 4px;
+        position: relative;
+        margin-left: 40px;
+        background-color:#fff;
+        margin:10px;
+        width: 1040px;
+        height: 300px;
+        margin-left: 15px;
+     }
+     #li{width: 320px;
+      height: 250px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #2D52EA;
+   float:left;}
+
+#lid{width: 320px;
+      height: 250px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color:  #2D52EA;
+   float:left;}
+
+  #lide{width: 320px;
+
+      height: 250px;
+     padding: 4px;
+     margin:20px auto;
+     margin-left: 10px;
+     background-color: #2D52EA;
+   float:left;}
+
+
+
+

@@ -1,11 +1,12 @@
-@extends('master')
-@section('content')
-  <div class="page-header">
-    <div class="pull-right">
-      <a href="/login" class="btn btn-default">LOGIN</a>
-    </div>
-    <h2>Sign up</h2>
-  </div>
+<link rel="stylesheet" href="/css/layout.css" />
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<div class="header">
+</div>
+<div class="tent"><img src="http://blog.wmiafrica.org/wp-content/uploads/2013/09/9662943066_4269a28a2b_z.jpg"></div>
+ <div class="cont">
+    <h2>   <i class="fa fa-sign-in"></i>    Sign up</h2>
+  
 {{Form::open(['action' => 'AuthController@signup'])}}
 <div>
     <label for="Username">Username</label>
@@ -22,4 +23,5 @@
 
 <!-- Errors here -->
 @include('layouts.errors')
-@stop
+</div>
+<div class="footer"></div>

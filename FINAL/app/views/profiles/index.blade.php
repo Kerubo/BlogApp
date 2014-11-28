@@ -1,20 +1,28 @@
-@extends('master')
-@section('content')
-<div class="come">
-<h2>Profiles</h2>
-<p>
-    <h4>WELCOME {{ Auth::user()->profile->firstname }} 
-    <img src="{{Auth::user()->gravatar()}}" alt=""/></h4>
-
-</p>
-
- <div class="pull-right btn-group">
+<link rel="stylesheet" href="/css/layout.css" />
+<div class="header">
+<b>E-Botics Kenya</b>
+<a href="{{action('AuthController@logout')}}">Logout</a>
+</div>
+<div class="tent"><div class="pull-right btn-group">
       <a href="{{route('posts.index')}}" class="btn btn-default">Entreprenuership</a>
       <a href="{{route('posts.index')}}" class="btn btn-default">Robotics</a>
-      <a href="/logout" class="btn btn-primary">Logout</a>
-    </div>
+     
+    </div><img src="http://blog.wmiafrica.org/wp-content/uploads/2013/09/9662943550_57442a281f_z.jpg"></div>
+<div class="cont">
+<p>
 
-<p><a href="{{action('AuthController@logout')}}">Logout</a></p>
+    <h4>WELCOME {{ Auth::user()->profile->firstname }} 
+    <img src="{{Auth::user()->gravatar()}}" alt=""/></h4>
+</p>
+
+
+
+ 
+<h3 style="ont-size:20px;
+  font-family:Aril Narrow;
+  background-color: #016DA0;
+  color:#F05A28;text-align:center;">Connect with other E-Botics Users</h3>
+<!--
 <table style="border-top: 2px;border: 4px solid #000;">
     <thead style="background:#ccc;">
         <th>First Name</th>
@@ -38,7 +46,6 @@
         </tr>
         @endforeach
     </tbody>
-</table>
+</table>-->
 </div>
-<div class="come"></div>
-@stop
+<div class="footer"></div>
